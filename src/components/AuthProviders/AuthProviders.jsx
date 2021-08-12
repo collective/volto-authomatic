@@ -16,7 +16,7 @@ import './AuthProviders.css';
  */
 function AuthProviders({ providers, action, onSelectProvider }) {
   return (
-    <Container id={'authenticationProviders'}>
+    <Container id='authenticationProviders'>
       {providers.map(function (provider, i) {
         return (
           provider && (

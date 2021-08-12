@@ -21,12 +21,12 @@ function AuthProvider({ provider, action, onSelectProvider }) {
   const icon = icons[providerId];
   return (
     <Button
-      className={'authenticationProvider'}
+      className='authenticationProvider'
       id={provider.id}
       title={provider.title}
       onClick={() => onSelectProvider(provider)}
     >
-      {icon && <Icon name={icon} title={provider.title} size={'32px'} />}
+      {icon && <Icon name={icon} title={provider.title} size='32px' />}
       {action === 'login' && (
         <FormattedMessage id="Log in with" defaultMessage="Log in with" />
       )}
