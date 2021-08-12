@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-12T12:40:10.386Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Language: \n"
+"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Language-Code: en\n"
+"Language-Name: Português do Brasil\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: volto\n"
+
+#: components/LoginAuthomatic/LoginAuthomatic
+msgid "Authenticating"
+msgstr "Autenticando"
+
+#: components/LoginAuthomatic/LoginAuthomatic
+msgid "Authentication failed."
+msgstr "Falha na autenticaćão."
+
+#: components/Login/Login
+msgid "Log In"
+msgstr "Entrar"
+
+#: components/AuthProvider/AuthProvider
+msgid "Log in with"
+msgstr "Entrar com"
+
+#: components/Login/Login
+msgid "Login"
+msgstr "Acessar"
+
+#: components/LoginAuthomatic/LoginAuthomatic
+msgid "Login Failed"
+msgstr "Falha no acesso"
+
+#: components/Register/Register
+msgid "Register"
+msgstr "Cadastro"
+
+#: components/Login/Login
+msgid "Select Login Provider"
+msgstr "Escolha o provedor de autenticaćão"
+
+#: components/Register/Register
+msgid "Select Registration Provider"
+msgstr "Escolha o provedor de cadastro"
+
+#: components/AuthProvider/AuthProvider
+msgid "Sign up with"
+msgstr "Cadastrar usando"

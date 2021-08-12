@@ -1,0 +1,59 @@
+.ui.button.authenticationProvider {
+  display: inline-flex;
+  width: 300px;
+  align-items: center;
+  margin: 0.5rem auto;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px;
+}
+
+.ui.button.authenticationProvider:hover {
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px;
+}
+
+.ui.button.authenticationProvider#facebook {
+  background: #3b5998 none repeat scroll 0% 0%;
+  color: white;
+}
+
+.ui.button.authenticationProvider#facebook:hover {
+  background: #293e69 none repeat scroll 0% 0%;
+}
+
+.ui.button.authenticationProvider#github {
+  background: #333333 none repeat scroll 0% 0%;
+  color: white;
+}
+
+.ui.button.authenticationProvider#github:hover {
+  background: #555555 none repeat scroll 0% 0%;
+}
+
+.ui.button.authenticationProvider#google {
+  background: white none repeat scroll 0% 0%;
+  color: black;
+}
+
+.ui.button.authenticationProvider#google:hover {
+  background: #eff0ee none repeat scroll 0% 0%;
+}
+
+.ui.button.authenticationProvider#linkedin {
+  background: rgb(26, 129, 185) none repeat scroll 0% 0%;
+  color: white;
+}
+
+.ui.button.authenticationProvider#linkedin:hover {
+  background: rgb(7, 112, 169) none repeat scroll 0% 0%;
+  color: white;
+}
+
+.ui.button.authenticationProvider#microsoft {
+  background: rgb(50, 159, 253) none repeat scroll 0% 0%;
+  color: white;
+}
+
+.ui.button.authenticationProvider#microsoft:hover {
+  background: rgb(0, 137, 255) none repeat scroll 0% 0%;
+}
