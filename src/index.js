@@ -1,4 +1,4 @@
-import { Login, LoginAuthomatic } from './components';
+import { Login, LoginAuthomatic, Logout } from './components';
 import { authomaticRedirect, authOptions } from './reducers';
 
 const applyConfig = (config) => {
@@ -16,7 +16,7 @@ const applyConfig = (config) => {
   ];
   config.addonRoutes.push(
     { path: '/login', component: Login },
-    { path: '/logout', component: Login },
+    { path: '/logout', component: Logout },
     { path: '/register', component: Login },
     { path: '/login-authomatic/:provider', component: LoginAuthomatic },
   );
