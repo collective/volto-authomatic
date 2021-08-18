@@ -1,7 +1,7 @@
 # Social Login for Volto (volto-authomatic)
 
 
-Addon implementing Social Login in Volto sites. It requires [pas.plugins.authomatic](https://github.com/collective/pas.plugins.authomatic/) to be installed and configured on the Plone backend.
+Addon implementing Social Login in Volto sites. It requires [pas.plugins.authomatic](https://github.com/collective/pas.plugins.authomatic/), version 1.0b2 or superior, to be installed and configured on the Plone backend.
 
 ## Install
 
