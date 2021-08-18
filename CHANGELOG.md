@@ -1,11 +1,5 @@
-# Change Log
-
-## 1.0.0 (unreleased)
-
-### Breaking
+## 1.0.0 (2021+08+18)
 
 ### Feature
 
-### Bugfix
-
-### Internal
+- Initial release
