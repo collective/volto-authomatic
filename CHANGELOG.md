@@ -1,3 +1,10 @@
+### [1.0.2](https://github.com/collective/volto-authomatic/compare/1.0.1...1.0.2) (2021-08-18)
+
+
+### Maintenance
+
+* Update documentation about the package. ([cb1de2a](https://github.com/collective/volto-authomatic/commit/cb1de2a3022c0442eaf7ddcef22ee428703bcd4d))
+
 ### [1.0.1](https://github.com/collective/volto-authomatic/compare/1.0.0...1.0.1) (2021-08-18)
 
 
