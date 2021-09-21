@@ -17,8 +17,14 @@ const applyConfig = (config) => {
   ];
   config.addonRoutes.push(
     { path: '/login', component: Login },
+    { path: '/**/login', component: Login },
     { path: '/logout', component: Logout },
+    { path: '/**/logout', component: Logout },
     { path: '/register', component: Login },
+    {
+      path: `/(${config.settings?.supportedLanguages.join('|')})/register`,
+      component: Login,
+    },
     { path: '/login-authomatic/:provider', component: LoginAuthomatic },
   );
   return config;
