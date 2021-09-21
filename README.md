@@ -13,7 +13,7 @@ Addon implementing Social Login in Volto sites. It requires [pas.plugins.authoma
 ## Examples
 volto-authomatic can be seen in action at the following sites:
 
-- 2021 Plone Conference: https://2021.ploneconf.org
+- [2021 Plone Conference](https://2021.ploneconf.org)
 
 ## Install
 
@@ -49,3 +49,11 @@ If you already have a Volto project, just update `package.json`:
 ### Test it
 
 Go to http://localhost:3000/login
+
+
+## Credits
+
+The development of this plugin has been kindly sponsored by:
+
+- [Helmholtz Zentrum Berlin](https://www.helmholtz-berlin.de/)
+- [kitconcept](http://www.kitconcept.com/)
