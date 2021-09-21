@@ -3,6 +3,7 @@ import { authomaticRedirect, authOptions } from './reducers';
 
 const applyConfig = (config) => {
   config.addonReducers = {
+    ...config.addonReducers,
     authomaticRedirect,
     authOptions,
   };
