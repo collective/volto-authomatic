@@ -3,19 +3,9 @@
  * @module components/Login/Login
  */
 import React, { useEffect, useState } from 'react';
-import { Helmet } from '@plone/volto/helpers';
-import { Container, Segment } from 'semantic-ui-react';
 import { authomaticRedirect, listAuthOptions } from '../../actions';
-import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { useSelector, useDispatch } from 'react-redux';
-import AuthProviders from '../AuthProviders/AuthProviders';
-
-const messages = defineMessages({
-  Login: {
-    id: 'Login',
-    defaultMessage: 'Login',
-  },
-});
+import LoginForm from './LoginForm';
 
 /**
  * Login function.
@@ -51,32 +41,13 @@ function Login({ intl }) {
   };
 
   return (
-    <div id="page-login">
-      <Helmet title={intl.formatMessage(messages.Login)} />
-      <Container text>
-        <Segment.Group raised>
-          <Segment className="primary">
-            <FormattedMessage id="Log In" defaultMessage="Login" />
-          </Segment>
-          <Segment secondary>
-            <FormattedMessage
-              id="Select Login Provider"
-              defaultMessage="Select Login Provider"
-            />
-          </Segment>
-          <Segment className="form">
-            {!loading && options && (
-              <AuthProviders
-                providers={options}
-                action={'login'}
-                onSelectProvider={onSelectProvider}
-              />
-            )}
-          </Segment>
-        </Segment.Group>
-      </Container>
-    </div>
+    <LoginForm
+      loading={loading}
+      providers={options}
+      action={'login'}
+      onSelectProvider={onSelectProvider}
+    />
   );
 }
 
-export default injectIntl(Login);
+export default Login;

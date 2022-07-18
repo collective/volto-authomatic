@@ -7,7 +7,7 @@ import { authomaticLogin } from '../../actions';
 import { Container, Dimmer, Loader } from 'semantic-ui-react';
 import { toast } from 'react-toastify';
 import { Toast } from '@plone/volto/components';
-import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+import { defineMessages, injectIntl } from 'react-intl';
 import { useParams, useLocation, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -19,6 +19,10 @@ const messages = defineMessages({
   oAuthLoginFailedContent: {
     id: 'Authentication failed.',
     defaultMessage: 'Authentication failed.',
+  },
+  authenticating: {
+    id: 'Authenticating',
+    defaultMessage: 'Authenticating',
   },
 });
 
@@ -72,10 +76,7 @@ function LoginAuthomatic({ intl }) {
       <Container text>
         <Dimmer active={isLoading}>
           <Loader size={'huge'}>
-            <FormattedMessage
-              id="Authenticating"
-              defaultMessage="Authenticating"
-            />
+            {intl.formatMessage(messages.authenticating)}
           </Loader>
         </Dimmer>
       </Container>
