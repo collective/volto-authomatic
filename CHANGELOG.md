@@ -1,4 +1,4 @@
-### [1.0.3](https://github.com/collective/volto-authomatic/compare/1.0.2...1.0.3) (2021-09-21)
+## [1.0.3](https://github.com/collective/volto-authomatic/compare/1.0.2...1.0.3) (2021-09-21)
 
 ### Bug Fixes
 
