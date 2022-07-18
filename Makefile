@@ -1,8 +1,24 @@
-SHELL=/bin/bash
+# Yeoman Volto App development
+
+### Defensive settings for make:
+#     https://tech.davis-hansson.com/p/make/
+SHELL:=bash
+.ONESHELL:
+.SHELLFLAGS:=-xeu -o pipefail -O inherit_errexit -c
+.SILENT:
+.DELETE_ON_ERROR:
+MAKEFLAGS+=--warn-undefined-variables
+MAKEFLAGS+=--no-builtin-rules
+
+# Project settings
 
 DIR=$(shell basename $$(pwd))
-GIT_NAME = volto-authomatic
-RAZZLE_JEST_CONFIG = jest-addon.config.js
+GIT_USER='collective'
+GIT_NAME='volto-authomatic'
+GIT_BRANCH='main'
+ADDON ?= "volto-authomatic"
+
+# Recipe snippets for reuse
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -11,49 +27,56 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-project:
+
+# Top-level targets
+addon-testing-project/package.json:
 	npm install -g yo
 	npm install -g @plone/generator-volto
 	npm install -g mrs-developer
-	yo @plone/volto project --addon ${GIT_NAME} --workspace "src/addons/${DIR}" --no-interactive
-	ln -sf $$(pwd) project/src/addons/
-	cp .project.eslintrc.js .eslintrc.js
-	cd project && yarn
+	rm -Rf addon-testing-project
+	npx -p @plone/scripts addon clone https://github.com/${GIT_USER}/${GIT_NAME}.git --branch ${GIT_BRANCH}
 	@echo "-------------------"
 	@echo "$(GREEN)Volto project is ready!$(RESET)"
-	@echo "$(RED)Now run: cd project && yarn start$(RESET)"
 
+.PHONY: project
+project: addon-testing-project/package.json
+	@echo "$(RED)Now run: cd addon-testing-project && yarn start$(RESET)"
+
+.PHONY: storybook
+storybook: addon-testing-project/package.json
+	@echo "$(GREEN)Create Storybook$(RESET)"
+	(cd addon-testing-project && yarn build-storybook)
+
+.PHONY: all
 all: project
 
-.PHONY: test
-test: ## Run unit test suite for the addon
-	@echo "$(GREEN)==> Run unit test suite for the addon$(RESET)"
-	docker run -it --rm -e NAMESPACE="$(NAMESPACE)" -e DEPENDENCIES="$(DEPENDENCIES)" -e GIT_NAME="$(GIT_NAME)" -v $(shell pwd):/opt/frontend/my-volto-project/src/addons/$(GIT_NAME) plone/volto-addon-ci bash -c "RAZZLE_JEST_CONFIG=$(RAZZLE_JEST_CONFIG) yarn test src/addons/$(GIT_NAME) --watchAll"
+.PHONY: format-prettier
+format-prettier: ## Format Code with Prettier
+	yarn run prettier:fix
 
-.PHONY: prettier
-prettier: ## Run unit test suite for the addon
-	@echo "$(GREEN)==> Run prettier for the addon$(RESET)"
-	docker run -it --rm -e NAMESPACE="$(NAMESPACE)" -e DEPENDENCIES="$(DEPENDENCIES)" -e GIT_NAME="$(GIT_NAME)" -v $(shell pwd):/opt/frontend/my-volto-project/src/addons/$(GIT_NAME) plone/volto-addon-ci prettier
+.PHONY: format-stylelint
+format-stylelint: ## Format Code with Stylelint
+	yarn run stylelint:fix
 
-.PHONY: lint
-lint: ## Run unit test suite for the addon
-	@echo "$(GREEN)==> Run ESlint for the addon$(RESET)"
-	docker run -it --rm -e NAMESPACE="$(NAMESPACE)" -e DEPENDENCIES="$(DEPENDENCIES)" -e GIT_NAME="$(GIT_NAME)" -v $(shell pwd):/opt/frontend/my-volto-project/src/addons/$(GIT_NAME) plone/volto-addon-ci eslint
+.PHONY: format
+format: format-prettier format-stylelint ## Format the codebase according to our standards
 
-.PHONY: stylelint
-stylelint: ## Run unit test suite for the addon
-	@echo "$(GREEN)==> Run stylelint for the addon$(RESET)"
-	docker run -it --rm -e NAMESPACE="$(NAMESPACE)" -e DEPENDENCIES="$(DEPENDENCIES)" -e GIT_NAME="$(GIT_NAME)" -v $(shell pwd):/opt/frontend/my-volto-project/src/addons/$(GIT_NAME) plone/volto-addon-ci stylelint
+.PHONY: i18n
+i18n: ## Sync i18n
+	yarn i18n
 
+.PHONY: i18n-ci
+i18n-ci: ## Check if i18n is not synced
+	yarn i18n && git diff -G'^[^\"POT]' --exit-code
 .PHONY: start-test-backend
 start-test-backend: ## Start Test Plone Backend
 	@echo "$(GREEN)==> Start Test Plone Backend$(RESET)"
-	docker run -i --rm -e ZSERVER_HOST=0.0.0.0 -e ZSERVER_PORT=55001 -p 55001:55001 -e SITE=plone -e APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,kitconcept.volto:default-homepage -e CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,kitconcept.volto,kitconcept.volto.cors -e ADDONS='plone.app.robotframework plone.app.contenttypes plone.restapi kitconcept.volto' plone ./bin/robot-server plone.app.robotframework.testing.PLONE_ROBOT_TESTING
+	docker run -i --rm -e ZSERVER_HOST=0.0.0.0 -e ZSERVER_PORT=55001 -p 55001:55001 -e SITE=plone -e APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,plone.volto:default-homepage -e CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,plone.volto,plone.volto.cors -e ADDONS='plone.app.robotframework plone.app.contenttypes plone.restapi plone.volto' plone ./bin/robot-server plone.app.robotframework.testing.PLONE_ROBOT_TESTING
 
 .PHONY: start-backend-docker
 start-backend-docker:		## Starts a Docker-based backend
 	@echo "$(GREEN)==> Start Docker-based Plone Backend$(RESET)"
-	docker run -it --rm --name=plone -p 8080:8080 -e SITE=Plone -e ADDONS="kitconcept.volto" -e ZCML="kitconcept.volto.cors" plone
+	docker run -it --rm --name=plone -p 8080:8080 -e SITE=Plone plone/plone-backend:6.0.0a6
 
 .PHONY: help
 help:		## Show this help.
