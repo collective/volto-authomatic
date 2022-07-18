@@ -1,6 +1,6 @@
 {
   "name": "volto-authomatic",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Login authentication using pas.plugins.authomatic",
   "author": "Érico Andrei",
   "license": "MIT",
