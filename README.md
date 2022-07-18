@@ -8,9 +8,11 @@ Addon implementing Social Login in Volto sites. It requires [pas.plugins.authoma
 ## Screenshots
 
 ### Login Form
+
 <img alt="Login Form" src="./docs/login-form.png" width="500" />
 
 ## Examples
+
 volto-authomatic can be seen in action at the following sites:
 
 - [2021 Plone Conference](https://2021.ploneconf.org)
@@ -20,6 +22,7 @@ volto-authomatic can be seen in action at the following sites:
 ### New Volto Project
 
 Create a Volto project
+
 ```shell
 npm install -g yo @plone/generator-volto
 yo @plone/volto my-volto-project --addon volto-authomatic
@@ -34,6 +37,7 @@ yarn start
 ```
 
 ### Existing Volto Project
+
 If you already have a Volto project, just update `package.json`:
 
 ```JSON
@@ -49,7 +53,6 @@ If you already have a Volto project, just update `package.json`:
 ### Test it
 
 Go to http://localhost:3000/login
-
 
 ## Credits
 
