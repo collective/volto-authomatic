@@ -2,9 +2,7 @@
 
 ## [1.1.0](https://github.com/collective/volto-authomatic/compare/1.0.3...1.1.0) (2022-07-18)
 
-
 ### Features
-
 
 - feat: Add Storybook for package. ([387ed67a6f40e1b852921b299e83b1ff67128f02](https://github.com/collective/volto-authomatic/commit/387ed67a6f40e1b852921b299e83b1ff67128f02))
 
