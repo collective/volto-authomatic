@@ -17,9 +17,9 @@
     "@plone/volto": ">=13.8.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
-    "@release-it/conventional-changelog": "^3.2.0",
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@release-it/conventional-changelog": "^5.0.0",
     "prettier": "2.0.5",
     "release-it": "*",
     "stylelint": "13.3.3",
