@@ -10,8 +10,13 @@
     "volto-addon",
     "volto",
     "plone",
+    "social-login",
+    "oauth2",
     "react"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {},
   "peerDependencies": {
     "@plone/volto": ">=13.8.0"
@@ -67,11 +72,21 @@
     "ignoreFiles": "theme/themes/default/**/*.overrides"
   },
   "scripts": {
-    "i18n": "NODE_ENV=production node src/i18n.js",
-    "stylelint": "./node_modules/stylelint/bin/stylelint.js --allow-empty-input 'src/**/*.{css,less}'",
-    "stylelint:overrides": "./node_modules/.bin/stylelint --syntax less --allow-empty-input 'theme/**/*.overrides' 'src/**/*.overrides'",
-    "stylelint:fix": "yarn stylelint --fix && yarn stylelint:overrides --fix",
+    "ci:test-acceptance-server": "make test-acceptance-server",
+    "cy:test:fixture:setup": "node cypress/support/reset-fixture.js",
+    "cy:test:fixture:teardown": "node cypress/support/reset-fixture.js teardown",
+    "cypress:open": "NODE_ENV=production ../../../node_modules/cypress/bin/cypress open",
+    "cypress:run": "NODE_ENV=test ../../../node_modules/cypress/bin/cypress run",
+    "cypress:start-frontend": "cd ../../../ && RAZZLE_API_PATH=http://localhost:55001/plone yarn start",
+    "dry-release": "release-it --dry-run",
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "prettier:fix": "./node_modules/.bin/prettier --single-quote --write 'src/**/*.{js,jsx,json,css,less,md}'",
     "prettier": "./node_modules/.bin/prettier --single-quote --check 'src/**/*.{js,jsx,json,css,less,md}'",
-    "prettier:fix": "./node_modules/.bin/prettier --single-quote --write 'src/**/*.{js,jsx,json,css,less,md}'"
+    "release-alpha": "release-it --preRelease=alpha",
+    "release-major-alpha": "release-it major --preRelease=alpha",
+    "release": "release-it",
+    "stylelint:fix": "yarn stylelint --fix && yarn stylelint:overrides --fix",
+    "stylelint:overrides": "./node_modules/.bin/stylelint --syntax less --allow-empty-input 'theme/**/*.overrides' 'src/**/*.overrides'",
+    "stylelint": "./node_modules/stylelint/bin/stylelint.js --allow-empty-input 'src/**/*.{css,less}'"
   }
 }

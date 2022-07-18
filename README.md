@@ -2,6 +2,8 @@
 
 Addon implementing Social Login in Volto sites. It requires [pas.plugins.authomatic](https://github.com/collective/pas.plugins.authomatic/), version 1.0b2 or superior, to be installed and configured on the Plone backend.
 
+[![npm](https://img.shields.io/npm/v/volto-authomatic)](https://www.npmjs.com/package/volto-authomatic)
+[![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://collective.github.io/volto-authomatic/)
 [![Code analysis checks](https://github.com/collective/volto-authomatic/actions/workflows/code.yml/badge.svg)](https://github.com/collective/volto-authomatic/actions/workflows/code.yml)
 [![Unit tests](https://github.com/collective/volto-authomatic/actions/workflows/unit.yml/badge.svg)](https://github.com/collective/volto-authomatic/actions/workflows/unit.yml)
 
@@ -15,6 +17,8 @@ Addon implementing Social Login in Volto sites. It requires [pas.plugins.authoma
 
 volto-authomatic can be seen in action at the following sites:
 
+- [Plone Brasil](https://plone.org.br)
+- [2022 Plone Conference](https://2022.ploneconf.org)
 - [2021 Plone Conference](https://2021.ploneconf.org)
 
 ## Install
