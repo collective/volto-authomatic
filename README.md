@@ -2,17 +2,23 @@
 
 Addon implementing Social Login in Volto sites. It requires [pas.plugins.authomatic](https://github.com/collective/pas.plugins.authomatic/), version 1.0b2 or superior, to be installed and configured on the Plone backend.
 
+[![npm](https://img.shields.io/npm/v/volto-authomatic)](https://www.npmjs.com/package/volto-authomatic)
+[![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://collective.github.io/volto-authomatic/)
 [![Code analysis checks](https://github.com/collective/volto-authomatic/actions/workflows/code.yml/badge.svg)](https://github.com/collective/volto-authomatic/actions/workflows/code.yml)
 [![Unit tests](https://github.com/collective/volto-authomatic/actions/workflows/unit.yml/badge.svg)](https://github.com/collective/volto-authomatic/actions/workflows/unit.yml)
 
 ## Screenshots
 
 ### Login Form
+
 <img alt="Login Form" src="./docs/login-form.png" width="500" />
 
 ## Examples
+
 volto-authomatic can be seen in action at the following sites:
 
+- [Plone Brasil](https://plone.org.br)
+- [2022 Plone Conference](https://2022.ploneconf.org)
 - [2021 Plone Conference](https://2021.ploneconf.org)
 
 ## Install
@@ -20,6 +26,7 @@ volto-authomatic can be seen in action at the following sites:
 ### New Volto Project
 
 Create a Volto project
+
 ```shell
 npm install -g yo @plone/generator-volto
 yo @plone/volto my-volto-project --addon volto-authomatic
@@ -34,6 +41,7 @@ yarn start
 ```
 
 ### Existing Volto Project
+
 If you already have a Volto project, just update `package.json`:
 
 ```JSON
@@ -49,7 +57,6 @@ If you already have a Volto project, just update `package.json`:
 ### Test it
 
 Go to http://localhost:3000/login
-
 
 ## Credits
 

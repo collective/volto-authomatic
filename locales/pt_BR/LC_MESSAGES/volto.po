@@ -24,7 +24,7 @@ msgstr "Autenticando"
 msgid "Authentication failed."
 msgstr "Falha na autenticaćão."
 
-#: components/Login/Login
+#: components/Login/LoginForm
 msgid "Log In"
 msgstr "Entrar"
 
@@ -32,7 +32,7 @@ msgstr "Entrar"
 msgid "Log in with"
 msgstr "Entrar com"
 
-#: components/Login/Login
+#: components/Login/LoginForm
 msgid "Login"
 msgstr "Acessar"
 
@@ -40,17 +40,9 @@ msgstr "Acessar"
 msgid "Login Failed"
 msgstr "Falha no acesso"
 
-#: components/Register/Register
-msgid "Register"
-msgstr "Cadastro"
-
-#: components/Login/Login
+#: components/Login/LoginForm
 msgid "Select Login Provider"
 msgstr "Escolha o provedor de autenticaćão"
-
-#: components/Register/Register
-msgid "Select Registration Provider"
-msgstr "Escolha o provedor de cadastro"
 
 #: components/AuthProvider/AuthProvider
 msgid "Sign up with"
