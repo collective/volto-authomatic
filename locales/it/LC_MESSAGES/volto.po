@@ -24,7 +24,7 @@ msgstr ""
 msgid "Authentication failed."
 msgstr ""
 
-#: components/Login/Login
+#: components/Login/LoginForm
 msgid "Log In"
 msgstr ""
 
@@ -32,7 +32,7 @@ msgstr ""
 msgid "Log in with"
 msgstr ""
 
-#: components/Login/Login
+#: components/Login/LoginForm
 msgid "Login"
 msgstr ""
 
@@ -40,16 +40,8 @@ msgstr ""
 msgid "Login Failed"
 msgstr ""
 
-#: components/Register/Register
-msgid "Register"
-msgstr ""
-
-#: components/Login/Login
+#: components/Login/LoginForm
 msgid "Select Login Provider"
-msgstr ""
-
-#: components/Register/Register
-msgid "Select Registration Provider"
 msgstr ""
 
 #: components/AuthProvider/AuthProvider
