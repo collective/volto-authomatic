@@ -16,7 +16,7 @@ DIR=$(shell basename $$(pwd))
 GIT_USER='collective'
 GIT_NAME='volto-authomatic'
 GIT_BRANCH='main'
-ADDON ?= "volto-authomatic"
+ADDON ?= "@plone-collective/volto-authomatic"
 
 # Recipe snippets for reuse
 

@@ -1,6 +1,8 @@
-project/
-node_modules
-cypress/videos/
-results
-build
+.eslintrc.js
+.vscode/
 *~
+build
+cypress/videos/
+node_modules
+project/
+results

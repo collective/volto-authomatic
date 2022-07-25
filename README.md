@@ -1,4 +1,4 @@
-# Social Login for Volto (volto-authomatic)
+# Social Login for Volto (@plone-collective/volto-authomatic)
 
 Addon implementing Social Login in Volto sites. It requires [pas.plugins.authomatic](https://github.com/collective/pas.plugins.authomatic/), version 1.0b2 or superior, to be installed and configured on the Plone backend.
 
@@ -29,7 +29,7 @@ Create a Volto project
 
 ```shell
 npm install -g yo @plone/generator-volto
-yo @plone/volto my-volto-project --addon volto-authomatic
+yo @plone/volto my-volto-project --addon @plone-collective/volto-authomatic
 cd my-volto-project
 ```
 
@@ -46,11 +46,11 @@ If you already have a Volto project, just update `package.json`:
 
 ```JSON
 "addons": [
-    "volto-authomatic"
+    "@plone-collective/volto-authomatic"
 ],
 
 "dependencies": {
-    "volto-authomatic": "*"
+    "@plone-collective/volto-authomatic": "*"
 }
 ```
 
