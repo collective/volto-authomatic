@@ -4,6 +4,7 @@
  */
 import React, { useEffect, useState } from 'react';
 import { authomaticRedirect, listAuthOptions } from '../../actions';
+import { injectIntl } from 'react-intl';
 import { useSelector, useDispatch } from 'react-redux';
 import LoginForm from './LoginForm';
 
@@ -50,4 +51,4 @@ function Login({ intl }) {
   );
 }
 
-export default Login;
+export default injectIntl(Login);

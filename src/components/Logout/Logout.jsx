@@ -6,6 +6,7 @@
 import React, { useEffect } from 'react';
 
 import Login from '../Login/Login';
+import { injectIntl } from 'react-intl';
 import { logout, purgeMessages } from '@plone/volto/actions';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -27,4 +28,4 @@ function Logout({ intl }) {
   return <Login location={{ query: location.query }} />;
 }
 
-export default Logout;
+export default injectIntl(Logout);
