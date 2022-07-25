@@ -1,5 +1,5 @@
 {
-  "name": "volto-authomatic",
+  "name": "@plone-collective/volto-authomatic",
   "version": "1.1.0",
   "description": "Login authentication using pas.plugins.authomatic",
   "author": "Érico Andrei",
