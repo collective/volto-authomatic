@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0](https://github.com/collective/volto-authomatic/compare/1.1.0...1.2.0) (2022-07-25)
+
+
+### Features
+
+
+- feat: Apply i18n to Login and Logout views ([0c996958828e18e4d058e0fa2c8d4806297764ff](https://github.com/collective/volto-authomatic/commit/0c996958828e18e4d058e0fa2c8d4806297764ff))
+- feat: Rename package to @plone-collective/volto-authomatic ([8bdd8dd1d6e7f676f05f47db449307fbd5ba026e](https://github.com/collective/volto-authomatic/commit/8bdd8dd1d6e7f676f05f47db449307fbd5ba026e))
+
 ## [1.1.0](https://github.com/collective/volto-authomatic/compare/1.0.3...1.1.0) (2022-07-18)
 
 ### Features
