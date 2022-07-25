@@ -68,6 +68,7 @@ i18n: ## Sync i18n
 .PHONY: i18n-ci
 i18n-ci: ## Check if i18n is not synced
 	yarn i18n && git diff -G'^[^\"POT]' --exit-code
+
 .PHONY: start-test-backend
 start-test-backend: ## Start Test Plone Backend
 	@echo "$(GREEN)==> Start Test Plone Backend$(RESET)"
@@ -77,6 +78,17 @@ start-test-backend: ## Start Test Plone Backend
 start-backend-docker:		## Starts a Docker-based backend
 	@echo "$(GREEN)==> Start Docker-based Plone Backend$(RESET)"
 	docker run -it --rm --name=plone -p 8080:8080 -e SITE=Plone plone/plone-backend:6.0.0a6
+
+# Release
+.PHONY: dry-release
+dry-release: ## Dry release this package
+	@echo "$(GREEN)==> Dry release the package$(RESET)"
+	@npx release-it --dry-run
+
+.PHONY: release
+release: ## Release this package
+	@echo "$(GREEN)==> Release the package$(RESET)"
+	@npx release-it
 
 .PHONY: help
 help:		## Show this help.
