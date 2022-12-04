@@ -1,5 +1,6 @@
 import { Login, LoginAuthomatic, Logout } from './components';
 import { authomaticRedirect, authOptions } from './reducers';
+import { Login as VoltoLogin } from '@plone/volto/components';
 
 const applyConfig = (config) => {
   config.addonReducers = {
@@ -16,6 +17,7 @@ const applyConfig = (config) => {
     /^\/login-authomatic\/.*$/,
   ];
   config.addonRoutes.push(
+    { path: '/fallback_login', component: VoltoLogin },
     { path: '/login', component: Login },
     { path: '/**/login', component: Login },
     { path: '/logout', component: Logout },
