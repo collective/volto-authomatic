@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/collective/volto-authomatic/compare/1.2.0...1.3.0) (2022-12-05)
+
+
+### Features
+
+
+- feat: Add fallback_login route pointing to the normal login form ([7cc9cffda2a0aab50f2c9729a60aeae709fca4d4](https://github.com/collective/volto-authomatic/commit/7cc9cffda2a0aab50f2c9729a60aeae709fca4d4))
+
 ## [1.2.0](https://github.com/collective/volto-authomatic/compare/1.1.0...1.2.0) (2022-07-25)
 
 
