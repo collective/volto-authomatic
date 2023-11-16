@@ -12,6 +12,7 @@
     "plone",
     "social-login",
     "oauth2",
+    "openid",
     "react"
   ],
   "publishConfig": {

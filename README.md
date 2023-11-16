@@ -28,7 +28,9 @@ It requires [pas.plugins.authomatic](https://github.com/collective/pas.plugins.a
 
 volto-authomatic can be seen in action at the following sites:
 
+- [Plone](https://plone.org)
 - [Plone Brasil](https://plone.org.br)
+- [2023 Plone Conference](https://2023.ploneconf.org)
 - [2022 Plone Conference](https://2022.ploneconf.org)
 - [2021 Plone Conference](https://2021.ploneconf.org)
 
