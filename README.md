@@ -2,9 +2,13 @@
 
 <h1 align="center">OAuth2 / OpenId Authentication in Volto</h1>
 
-Addon implementing Social Login in Volto sites.
+Addon implementing OAuth2 / OpenId Login in Volto sites.
 
-It requires [pas.plugins.authomatic](https://github.com/collective/pas.plugins.authomatic/), version 1.0b2 or superior, to be installed and configured on the Plone backend.
+This addon requires a server-side package to be installed. Currently we support one of the following:
+
+* [pas.plugins.authomatic](https://github.com/collective/pas.plugins.authomatic/) version 1.0b2 or superior
+* [pas.plugins.oidc](https://github.com/collective/pas.plugins.oidc/) version 2.0.0a1 or superior
+
 
 <div align="center">
 
