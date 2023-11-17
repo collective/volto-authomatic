@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.0.0](https://github.com/collective/volto-authomatic/compare/1.3.0...2.0.0) (2023-11-17)
+
+
+### Features
+
+
+- feat: Add support for pas.plugins.oidc (#12) ([fe191764b7f81f2c87a7618e165cfa3f23cb60aa](https://github.com/collective/volto-authomatic/commit/fe191764b7f81f2c87a7618e165cfa3f23cb60aa))
+- feat: Added Spanish support ([cd760708797b3465b88b96594c77ea3811a96828](https://github.com/collective/volto-authomatic/commit/cd760708797b3465b88b96594c77ea3811a96828))
+
 ## [1.3.0](https://github.com/collective/volto-authomatic/compare/1.2.0...1.3.0) (2022-12-05)
 
 
