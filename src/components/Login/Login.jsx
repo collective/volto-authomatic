@@ -64,7 +64,6 @@ function Login({ intl }) {
       options.length === 1 &&
       options[0].id === 'oidc'
     ) {
-
       setStartedOIDC(true);
       dispatch(oidcRedirect('oidc'));
     }
