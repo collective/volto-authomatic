@@ -160,6 +160,13 @@ debug-frontend:  ## Run bash in the Frontend container (for debug infrastructure
 pull-backend-image:  ## Pulls and updates the backend image (for use it while developing)
 	docker pull ghcr.io/voltosneridagh-dev:latest
 
+# Release
 .PHONY: release
-release:  ## Release a version of the add-on
-	yarn release
+release: ## Release package
+	yarn
+	npx release-it
+
+.PHONY: dry-run-release
+dry-run-release: ## Dry Run Release package
+	yarn
+	npx release-it --dry-run
