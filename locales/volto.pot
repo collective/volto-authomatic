@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2022-07-18T19:46:58.284Z\n"
+"POT-Creation-Date: 2023-11-17T22:25:53.666Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -14,13 +14,20 @@ msgstr ""
 "Domain: volto\n"
 
 #: components/LoginAuthomatic/LoginAuthomatic
+#: components/LoginOIDC/LoginOIDC
 # defaultMessage: Authenticating
 msgid "Authenticating"
 msgstr ""
 
 #: components/LoginAuthomatic/LoginAuthomatic
+#: components/LoginOIDC/LoginOIDC
 # defaultMessage: Authentication failed.
 msgid "Authentication failed."
+msgstr ""
+
+#: components/Login/LoginForm
+# defaultMessage: Loading
+msgid "Loading"
 msgstr ""
 
 #: components/Login/LoginForm
@@ -39,6 +46,7 @@ msgid "Login"
 msgstr ""
 
 #: components/LoginAuthomatic/LoginAuthomatic
+#: components/LoginOIDC/LoginOIDC
 # defaultMessage: Login Failed
 msgid "Login Failed"
 msgstr ""
@@ -51,4 +59,9 @@ msgstr ""
 #: components/AuthProvider/AuthProvider
 # defaultMessage: Sign up with
 msgid "Sign up with"
+msgstr ""
+
+#: components/Logout/Logout
+# defaultMessage: You have been logged out
+msgid "You have been logged out"
 msgstr ""

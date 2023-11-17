@@ -9,15 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@v4
 
       - name: Generate Storybook
         run: |
-          make storybook
+          mkdir -p .storybook
+          chmod -R 777 .storybook
+          make build-storybook
 
-      # Come up with a way to extract it from the container
-      # - name: Deploy to GitHub pages
-      #   uses: JamesIves/github-pages-deploy-action@v4
-      #   with:
-      #     branch: gh-pages
-      #     folder: addon-testing-project/storybook-static
+      - name: Deploy to GitHub pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: .storybook

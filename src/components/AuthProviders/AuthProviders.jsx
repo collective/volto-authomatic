@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Dimmer, Loader } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import AuthProvider from '../AuthProvider/AuthProvider';
 
 import './AuthProviders.css';
@@ -16,31 +16,11 @@ import './AuthProviders.css';
  */
 function AuthProviders({ providers, action, onSelectProvider }) {
   return (
-    <>
-      {providers && providers.length > 1 ? (
-        <Container id="authenticationProviders">
-          {providers.map(function (provider, i) {
-            return (
-              provider &&
-              provider.id !== 'oidc' && (
-                <AuthProvider
-                  key={i}
-                  provider={provider}
-                  action={action}
-                  onSelectProvider={onSelectProvider}
-                />
-              )
-            );
-          })}
-        </Container>
-      ) : (
-        <Container id="authenticationProviders">
-          <Dimmer active={true}>
-            <Loader size={'huge'} />
-          </Dimmer>
-        </Container>
-      )}
-    </>
+    <Container id="authenticationProviders">
+      {providers.map(function (provider, i) {
+        return provider && provider.id !== 'oidc' && <AuthProvider key={i} provider={provider} action={action} onSelectProvider={onSelectProvider} />;
+      })}
+    </Container>
   );
 }
 

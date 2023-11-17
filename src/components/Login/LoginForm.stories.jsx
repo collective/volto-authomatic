@@ -21,8 +21,24 @@ const StoryComponent = injectIntl(({ children, ...args }) => {
   );
 });
 
-export const Form = StoryComponent.bind({});
-Form.args = {
+export const NoProvider = StoryComponent.bind({});
+NoProvider.args = {
+  providers: [],
+  action: 'login',
+  loading: false,
+};
+
+export const OneProvider = StoryComponent.bind({});
+OneProvider.args = {
+  providers: [
+    providers.github,
+  ],
+  action: 'login',
+  loading: false,
+};
+
+export const MultipleProviders = StoryComponent.bind({});
+MultipleProviders.args = {
   providers: [
     providers.facebook,
     providers.github,
