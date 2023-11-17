@@ -19,20 +19,20 @@ function AuthProviders({ providers, action, onSelectProvider }) {
     <>
       {providers && providers.length > 1 ? (
         <Container id="authenticationProviders">
-            {providers.map(function (provider, i) {
-              return (
-                provider &&
-                provider.id !== 'oidc' && (
-                  <AuthProvider
-                    key={i}
-                    provider={provider}
-                    action={action}
-                    onSelectProvider={onSelectProvider}
-                  />
-                )
-              );
-            })}
-          </Container>
+          {providers.map(function (provider, i) {
+            return (
+              provider &&
+              provider.id !== 'oidc' && (
+                <AuthProvider
+                  key={i}
+                  provider={provider}
+                  action={action}
+                  onSelectProvider={onSelectProvider}
+                />
+              )
+            );
+          })}
+        </Container>
       ) : (
         <Container id="authenticationProviders">
           <Dimmer active={true}>
