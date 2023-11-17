@@ -31,7 +31,7 @@ ACCEPTANCE_COMPOSE=acceptance/docker-compose.yml
 CMD=CURRENT_DIR=${CURRENT_DIR} ADDON_NAME=${ADDON_NAME} ADDON_PATH=${ADDON_PATH} VOLTO_VERSION=${VOLTO_VERSION} PLONE_VERSION=${PLONE_VERSION} docker compose
 DOCKER_COMPOSE=${CMD} -p ${ADDON_PATH} -f ${COMPOSE_FILE}
 DEV_COMPOSE=COMPOSE_PROFILES=dev ${DOCKER_COMPOSE}
-LIVE_COMPOSE=COMPOSE_PROFILES=dev ${DOCKER_COMPOSE}
+LIVE_COMPOSE=COMPOSE_PROFILES=live ${DOCKER_COMPOSE}
 ACCEPTANCE=${CMD} -p ${ADDON_PATH}-acceptance -f ${ACCEPTANCE_COMPOSE}
 
 .PHONY: build-backend
@@ -58,6 +58,7 @@ build-live: ## Build Addon live
 build-addon: ## Build Addon dev
 	@echo "$(GREEN)==> Build Addon development container $(RESET)"
 	${DEV_COMPOSE} build addon-dev
+	${DEV_COMPOSE} build addon-storybook
 
 .PHONY: start-dev
 start-dev: ## Starts Dev container
@@ -100,6 +101,7 @@ lint: ## Lint Codebase
 	${DEV_COMPOSE} run --rm addon-dev prettier
 	${DEV_COMPOSE} run --rm addon-dev stylelint --allow-empty-input
 
+## Tests
 .PHONY: test
 test: ## Run unit tests
 	${DEV_COMPOSE} run --rm addon-dev test --watchAll
@@ -107,6 +109,19 @@ test: ## Run unit tests
 .PHONY: test-ci
 test-ci: ## Run unit tests in CI
 	${DEV_COMPOSE} run -e CI=1 addon-dev test
+
+## Storybook
+.PHONY: start-storybook
+start-storybook: ## Starts Storybook
+	@echo "$(GREEN)==> Start Storybook $(RESET)"
+	${DEV_COMPOSE} up addon-storybook
+
+
+.PHONY: build-storybook
+build-storybook: ## Build storybook
+	@echo "$(GREEN)==> Build storybook $(RESET)"
+	if [ ! -d .storybook ]; then mkdir .storybook; fi
+	${DEV_COMPOSE} run addon-storybook build-storybook
 
 ## Acceptance
 .PHONY: install-acceptance

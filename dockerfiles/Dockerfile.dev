@@ -19,3 +19,5 @@ RUN <<EOT
     /setupAddon
     yarn install --network-timeout 1000000
 EOT
+
+EXPOSE 6006

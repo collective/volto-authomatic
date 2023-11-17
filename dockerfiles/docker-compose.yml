@@ -19,11 +19,27 @@ services:
       # RAZZLE_INTERNAL_API_PATH: http://host.docker.internal:8080/Plone
       RAZZLE_API_PATH: http://127.0.0.1:8080/Plone
       HOST: 0.0.0.0
-    depends_on:
-      - backend
     ports:
       - 3000:3000
       - 3001:3001
+    tty: true
+    profiles:
+      - dev
+
+  addon-storybook:
+    build:
+      context: ../
+      dockerfile: ./dockerfiles/Dockerfile.dev
+      args:
+        ADDON_NAME: "${ADDON_NAME}"
+        ADDON_PATH: "${ADDON_PATH}"
+        VOLTO_VERSION: ${VOLTO_VERSION:-16}
+    volumes:
+      - ${CURRENT_DIR}:/app/src/addons/${ADDON_PATH}/
+      - ${CURRENT_DIR}/.storybook:/app/storybook-static/
+    ports:
+      - 6006:6006
+    command: "storybook"
     tty: true
     profiles:
       - dev

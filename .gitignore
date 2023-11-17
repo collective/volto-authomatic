@@ -6,6 +6,7 @@ cypress/videos/
 node_modules
 project/
 results
+.storybook
 
 # yarn 3
 .pnp.*
