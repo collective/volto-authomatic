@@ -3,11 +3,7 @@
  * @module components/Login/Login
  */
 import React, { useEffect, useState } from 'react';
-import {
-  authomaticRedirect,
-  listAuthOptions,
-  oidcRedirect,
-} from '../../actions';
+import { authomaticRedirect, listAuthOptions, oidcRedirect } from '../../actions';
 import { injectIntl } from 'react-intl';
 import { useSelector, useDispatch } from 'react-redux';
 import LoginForm from './LoginForm';
@@ -59,24 +55,13 @@ function Login({ intl }) {
   }, [startedOIDC, loginOIDCValues]);
 
   useEffect(() => {
-    if (
-      options !== undefined &&
-      options.length === 1 &&
-      options[0].id === 'oidc'
-    ) {
+    if (options !== undefined && options.length === 1 && options[0].id === 'oidc') {
       setStartedOIDC(true);
       dispatch(oidcRedirect('oidc'));
     }
   }, [options, dispatch]);
 
-  return (
-    <LoginForm
-      loading={loading}
-      providers={options}
-      action={'login'}
-      onSelectProvider={onSelectProvider}
-    />
-  );
+  return <LoginForm loading={loading} providers={options} action={'login'} onSelectProvider={onSelectProvider} />;
 }
 
 export default injectIntl(Login);

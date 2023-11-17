@@ -59,14 +59,7 @@ function LoginOIDC({ intl }) {
     if (error) {
       history.push('/login');
       if (!toast.isActive('loginFailed')) {
-        toast.error(
-          <Toast
-            error
-            title={intl.formatMessage(messages.oAuthLoginFailed)}
-            content={intl.formatMessage(messages.oAuthLoginFailedContent)}
-          />,
-          { autoClose: false, toastId: 'loginFailed' },
-        );
+        toast.error(<Toast error title={intl.formatMessage(messages.oAuthLoginFailed)} content={intl.formatMessage(messages.oAuthLoginFailedContent)} />, { autoClose: false, toastId: 'loginFailed' });
       }
     }
   }, [error, history, intl]);
@@ -75,9 +68,7 @@ function LoginOIDC({ intl }) {
     <div id="page-login">
       <Container text>
         <Dimmer active={isLoading}>
-          <Loader size={'huge'}>
-            {intl.formatMessage(messages.authenticating)}
-          </Loader>
+          <Loader size={'huge'}>{intl.formatMessage(messages.authenticating)}</Loader>
         </Dimmer>
       </Container>
     </div>

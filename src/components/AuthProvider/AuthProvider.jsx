@@ -20,20 +20,10 @@ function AuthProvider({ provider, action, onSelectProvider }) {
   const providerId = provider.id;
   const icon = icons[providerId];
   return (
-    <Button
-      className="authenticationProvider"
-      id={provider.id}
-      title={provider.title}
-      onClick={() => onSelectProvider(provider)}
-    >
+    <Button className="authenticationProvider" id={provider.id} title={provider.title} onClick={() => onSelectProvider(provider)}>
       {icon && <Icon name={icon} title={provider.title} size="32px" />}
-      {action === 'login' && (
-        <FormattedMessage id="Log in with" defaultMessage="Log in with" />
-      )}
-      {action === 'register' && (
-        <FormattedMessage id="Sign up with" defaultMessage="Sign up with" />
-      )}{' '}
-      {provider.title}
+      {action === 'login' && <FormattedMessage id="Log in with" defaultMessage="Log in with" />}
+      {action === 'register' && <FormattedMessage id="Sign up with" defaultMessage="Sign up with" />} {provider.title}
     </Button>
   );
 }
