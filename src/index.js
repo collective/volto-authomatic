@@ -1,5 +1,13 @@
-import { Login, LoginAuthomatic, Logout } from './components';
-import { authomaticRedirect, authOptions } from './reducers';
+import Login from './components/Login/Login';
+import LoginAuthomatic from './components/LoginAuthomatic/LoginAuthomatic';
+import LoginOIDC from './components/LoginOIDC/LoginOIDC';
+import Logout from './components/Logout/Logout';
+import {
+  authomaticRedirect,
+  authOptions,
+  oidcLogout,
+  oidcRedirect,
+} from './reducers';
 import { Login as VoltoLogin } from '@plone/volto/components';
 
 const applyConfig = (config) => {
@@ -7,14 +15,19 @@ const applyConfig = (config) => {
     ...config.addonReducers,
     authomaticRedirect,
     authOptions,
+    oidcLogout,
+    oidcRedirect,
   };
   config.settings.persistentReducers = [
     ...config.settings.persistentReducers,
     'authomaticRedirect',
+    'oidcLogout',
+    'oidcRedirect',
   ];
   config.settings.nonContentRoutes = [
     ...config.settings.nonContentRoutes,
     /^\/login-authomatic\/.*$/,
+    /^\/login-oidc\/.*$/,
   ];
   config.addonRoutes.push(
     { path: '/fallback_login', component: VoltoLogin },
@@ -28,6 +41,7 @@ const applyConfig = (config) => {
       component: Login,
     },
     { path: '/login-authomatic/:provider', component: LoginAuthomatic },
+    { path: '/login-oidc/:provider', component: LoginOIDC },
   );
   return config;
 };
