@@ -1,0 +1,5 @@
+cypress
+node_modules
+acceptance
+**/*.json
+**/*.stories.jsx
