@@ -5,6 +5,9 @@ FROM plone/frontend-dev:${VOLTO_VERSION}
 ARG ADDON_NAME
 ARG ADDON_PATH
 
+# Copy i18n helper
+COPY --chown=node:node dockerfiles/i18n.sh /app/
+
 # Copy linter / prettier configs
 COPY --chown=node:node .eslintignore* .prettierignore* /app/
 

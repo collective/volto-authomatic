@@ -86,8 +86,7 @@ install: ## Install the local environment, Cypress, build acceptance containers
 # Dev Helpers
 .PHONY: i18n
 i18n: ## Sync i18n
-	@echo "$(YELLOW)==> Do not forget to setup the local environment (make install) $(RESET)"
-	yarn i18n
+	${DEV_COMPOSE} run --rm -e ADDON_PATH=$(ADDON_PATH) --entrypoint '/app/i18n.sh' addon-dev
 
 .PHONY: format
 format: ## Format codebase

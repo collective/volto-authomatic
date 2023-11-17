@@ -17,33 +17,54 @@ msgstr ""
 "Domain: volto\n"
 
 #: components/LoginAuthomatic/LoginAuthomatic
+#: components/LoginOIDC/LoginOIDC
+# defaultMessage: Authenticating
 msgid "Authenticating"
 msgstr ""
 
 #: components/LoginAuthomatic/LoginAuthomatic
+#: components/LoginOIDC/LoginOIDC
+# defaultMessage: Authentication failed.
 msgid "Authentication failed."
 msgstr ""
 
 #: components/Login/LoginForm
+# defaultMessage: Loading
+msgid "Loading"
+msgstr ""
+
+#: components/Login/LoginForm
+# defaultMessage: Login
 msgid "Log In"
 msgstr ""
 
 #: components/AuthProvider/AuthProvider
+# defaultMessage: Log in with
 msgid "Log in with"
 msgstr ""
 
 #: components/Login/LoginForm
+# defaultMessage: Login
 msgid "Login"
 msgstr ""
 
 #: components/LoginAuthomatic/LoginAuthomatic
+#: components/LoginOIDC/LoginOIDC
+# defaultMessage: Login Failed
 msgid "Login Failed"
 msgstr ""
 
 #: components/Login/LoginForm
+# defaultMessage: Select Login Provider
 msgid "Select Login Provider"
 msgstr ""
 
 #: components/AuthProvider/AuthProvider
+# defaultMessage: Sign up with
 msgid "Sign up with"
+msgstr ""
+
+#: components/Logout/Logout
+# defaultMessage: You have been logged out
+msgid "You have been logged out"
 msgstr ""
