@@ -64,11 +64,11 @@ function Login({ intl }) {
       options.length === 1 &&
       options[0].id === 'oidc'
     ) {
-      console.log('aqui');
+
       setStartedOIDC(true);
       dispatch(oidcRedirect('oidc'));
     }
-  }, [options]);
+  }, [options, dispatch]);
 
   return (
     <LoginForm
