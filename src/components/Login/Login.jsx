@@ -35,7 +35,7 @@ function Login({ intl }) {
   const loginOAuthValues = useSelector((state) => state.authomaticRedirect);
   const loginOIDCValues = useSelector((state) => state.oidcRedirect);
   const location = useLocation();
-  const [cookies, setCookie] = useCookies();
+  const [, setCookie] = useCookies();
 
   useEffect(() => {
     dispatch(listAuthOptions());

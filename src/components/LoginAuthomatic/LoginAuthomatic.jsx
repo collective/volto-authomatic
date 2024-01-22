@@ -42,7 +42,7 @@ function LoginAuthomatic({ intl }) {
   const isLoading = userSession.login.loading;
   const error = userSession.login.error;
   const token = userSession.token;
-  const [cookies, setCookie, removeCookie] = useCookies();
+  const [cookies, , removeCookie] = useCookies();
   const return_url = cookies.return_url || '/';
 
   useEffect(() => {
