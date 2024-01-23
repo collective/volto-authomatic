@@ -6,7 +6,20 @@ import React, { useEffect, useState } from 'react';
 import { authomaticRedirect, listAuthOptions, oidcRedirect } from '../../actions';
 import { injectIntl } from 'react-intl';
 import { useSelector, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import LoginForm from './LoginForm';
+import qs from 'query-string';
+import { useCookies } from 'react-cookie';
+
+/**
+ * Get retur url function.
+ * @function getReturnUrl
+ * @param  {Object} location Location object.
+ * @returns {string} Return url.
+ */
+function getReturnUrl(location) {
+  return `${qs.parse(location.search).return_url || (location.pathname === '/login' ? '/' : location.pathname.replace('/login', ''))}`;
+}
 
 /**
  * Login function.
@@ -21,6 +34,8 @@ function Login({ intl }) {
   const options = useSelector((state) => state.authOptions.options);
   const loginOAuthValues = useSelector((state) => state.authomaticRedirect);
   const loginOIDCValues = useSelector((state) => state.oidcRedirect);
+  const location = useLocation();
+  const [, setCookie] = useCookies();
 
   useEffect(() => {
     dispatch(listAuthOptions());
@@ -40,6 +55,7 @@ function Login({ intl }) {
 
   const onSelectProvider = (provider) => {
     setStartedOAuth(true);
+    setCookie('return_url', getReturnUrl(location), { path: '/' });
     dispatch(authomaticRedirect(provider.id));
   };
 
