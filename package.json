@@ -1,6 +1,6 @@
 {
   "name": "@plone-collective/volto-authomatic",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Social Login with OAuth2/OpenId for Volto sites.",
   "author": "Érico Andrei",
   "license": "MIT",
