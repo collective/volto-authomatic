@@ -1,6 +1,6 @@
 {
   "name": "@plone-collective/volto-authomatic",
-  "version": "2.0.1",
+  "version": "2.1.0-beta.0",
   "description": "Social Login with OAuth2/OpenId for Volto sites.",
   "author": "Érico Andrei",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "react"
   ],
   "publishConfig": {
-    "access": "public"
+    "registry": "https://code.codesyntax.com/npm/"
   },
   "peerDependencies": {
     "@plone/volto": ">=13.8.0"
