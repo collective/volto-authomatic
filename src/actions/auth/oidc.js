@@ -2,6 +2,7 @@
  * OIDC Login
  * @module actions/auth/oidc
  */
+import config from '@plone/volto/registry';
 import { LOGIN, LOGOUT_OIDC, OIDC_REDIRECT } from '../../constants/ActionTypes';
 
 /**
@@ -11,11 +12,13 @@ import { LOGIN, LOGOUT_OIDC, OIDC_REDIRECT } from '../../constants/ActionTypes';
  * @returns {Object} OIDC redirect action.
  */
 export function oidcRedirect(providerId) {
+  const publicUrl = config.settings.publicURL;
+
   return {
     type: OIDC_REDIRECT,
     request: {
       op: 'get',
-      path: `@login-oidc/${providerId}`,
+      path: `@login-oidc/${providerId}?publicUrl=${publicUrl}`,
     },
   };
 }
