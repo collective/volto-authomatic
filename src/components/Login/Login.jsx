@@ -54,9 +54,14 @@ function Login({ intl }) {
   }, [startedOAuth, loginOAuthValues]);
 
   const onSelectProvider = (provider) => {
-    setStartedOAuth(true);
     setCookie('return_url', getReturnUrl(location), { path: '/' });
-    dispatch(authomaticRedirect(provider.id));
+    if (provider.plugin === 'oidc') {
+      setStartedOIDC(true);
+      dispatch(oidcRedirect(provider.id));
+    } else {
+      setStartedOAuth(true);
+      dispatch(authomaticRedirect(provider.id));
+    }
   };
 
   useEffect(() => {
