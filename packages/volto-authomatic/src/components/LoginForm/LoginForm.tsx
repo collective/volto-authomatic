@@ -14,11 +14,6 @@ interface LoginFormProps {
   description: string;
 }
 
-/**
- * LoginForm component.
- * @function LoginForm
- * @returns {JSX.Element} Login layout.
- */
 function LoginForm({
   children,
   title,

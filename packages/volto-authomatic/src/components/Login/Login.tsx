@@ -47,11 +47,6 @@ function getReturnUrl(location: Location): string {
   );
 }
 
-/**
- * Login function.
- * @function Login
- * @returns {JSX.Element} Markup of the Login page.
- */
 const Login: React.FC = () => {
   const dispatch = useDispatch();
   const location = useLocation();

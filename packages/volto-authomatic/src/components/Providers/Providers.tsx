@@ -16,11 +16,6 @@ interface ProvidersProps {
   onSelectProvider: (providerId: string) => void;
 }
 
-/**
- * Providers function.
- * @function Providers
- * @returns {JSX.Element} Markup of the list of authentication providers.
- */
 const Providers: React.FC<ProvidersProps> = ({
   providers,
   displayPlone,

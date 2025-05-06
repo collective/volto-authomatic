@@ -23,11 +23,6 @@ interface RootState {
   };
 }
 
-/**
- * Logout component.
- * @function Logout
- * @returns {JSX.Element | null} Markup of the Logout page.
- */
 const Logout: React.FC = () => {
   const intl = useIntl();
   const dispatch = useDispatch();

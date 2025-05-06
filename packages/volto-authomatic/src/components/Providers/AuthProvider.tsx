@@ -17,11 +17,6 @@ interface AuthProviderProps {
   onSelectProvider: (provider: AuthProviderOption) => void;
 }
 
-/**
- * AuthProvider function.
- * @function AuthProvider
- * @returns {JSX.Element} Markup of the AuthProvider option.
- */
 function AuthProvider({
   provider,
   action,
