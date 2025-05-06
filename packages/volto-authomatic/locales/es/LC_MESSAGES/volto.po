@@ -54,7 +54,7 @@ msgid "Log in"
 msgstr ""
 
 #. Default: "Log in with"
-#: components/Providers/AuthProvider
+#: messages
 msgid "Log in with"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgid "Sign in to start session"
 msgstr ""
 
 #. Default: "Sign up with"
-#: components/Providers/AuthProvider
+#: messages
 msgid "Sign up with"
 msgstr ""
 
