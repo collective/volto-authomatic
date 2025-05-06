@@ -4,10 +4,11 @@
  */
 import React from 'react';
 import { Button } from '@plone/components';
-import { FormattedMessage } from 'react-intl';
+import { useIntl } from 'react-intl';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import icons from '@plone-collective/volto-authomatic/icons/index';
 import type { AuthProviderOption } from '@plone-collective/volto-authomatic/types';
+import messages from '@plone-collective/volto-authomatic/messages';
 import './AuthProvider.scss';
 
 interface AuthProviderProps {
@@ -28,7 +29,11 @@ function AuthProvider({
 }: AuthProviderProps): JSX.Element {
   const providerId = provider.id;
   const icon = icons[providerId];
-
+  const intl = useIntl();
+  const label =
+    action === 'login'
+      ? intl.formatMessage(messages.LoginWith)
+      : intl.formatMessage(messages.RegisterWith);
   return (
     <Button
       className="authenticationProvider"
@@ -44,13 +49,7 @@ function AuthProvider({
         />
       )}
       <span className={'label'}>
-        {action === 'login' && (
-          <FormattedMessage id="Log in with" defaultMessage="Log in with" />
-        )}
-        {action === 'register' && (
-          <FormattedMessage id="Sign up with" defaultMessage="Sign up with" />
-        )}{' '}
-        {provider.title}
+        {label} {provider.title}
       </span>
     </Button>
   );

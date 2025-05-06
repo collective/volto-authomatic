@@ -70,6 +70,14 @@ const messages = defineMessages({
     id: 'box_forgot_password_option',
     defaultMessage: 'Forgot your password?',
   },
+  LoginWith: {
+    id: 'Log in with',
+    defaultMessage: 'Log in with',
+  },
+  RegisterWith: {
+    id: 'Sign up with',
+    defaultMessage: 'Sign up with',
+  },
 });
 
 export default messages;
