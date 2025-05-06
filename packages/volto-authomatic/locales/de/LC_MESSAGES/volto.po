@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: de\n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. Default: "Authenticating"
+#: messages
+msgid "Authenticating"
+msgstr ""
+
+#. Default: "Authentication failed."
+#: messages
+msgid "Authentication failed."
+msgstr ""
+
+#. Default: "Both email address and password are case sensitive, check that caps lock is not enabled."
+#: messages
+msgid "Both email address and password are case sensitive, check that caps lock is not enabled."
+msgstr ""
+
+#. Default: "Cancel"
+#: messages
+msgid "Cancel"
+msgstr ""
+
+#. Default: "Error"
+#: messages
+msgid "Error"
+msgstr ""
+
+#. Default: "Loading"
+#: messages
+msgid "Loading"
+msgstr ""
+
+#. Default: "Log in"
+#: messages
+msgid "Log in"
+msgstr ""
+
+#. Default: "Log in with"
+#: components/Providers/AuthProvider
+msgid "Log in with"
+msgstr ""
+
+#. Default: "Login"
+#: messages
+msgid "Login"
+msgstr ""
+
+#. Default: "Login Failed"
+#: messages
+msgid "Login Failed"
+msgstr ""
+
+#. Default: "Login Name"
+#: messages
+msgid "Login Name"
+msgstr ""
+
+#. Default: "Password"
+#: messages
+msgid "Password"
+msgstr ""
+
+#. Default: "Register"
+#: messages
+msgid "Register"
+msgstr ""
+
+#. Default: "Select Login Provider"
+#: messages
+msgid "Select Login Provider"
+msgstr ""
+
+#. Default: "Sign in to start session"
+#: messages
+msgid "Sign in to start session"
+msgstr ""
+
+#. Default: "Sign up with"
+#: components/Providers/AuthProvider
+msgid "Sign up with"
+msgstr ""
+
+#. Default: "You have been logged out"
+#: messages
+msgid "You have been logged out"
+msgstr ""
+
+#. Default: "Forgot your password?"
+#: messages
+msgid "box_forgot_password_option"
+msgstr ""

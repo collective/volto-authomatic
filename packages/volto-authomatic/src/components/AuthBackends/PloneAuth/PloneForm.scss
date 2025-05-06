@@ -1,0 +1,58 @@
+@mixin animate-network-hover() {
+  transform: var(--authomatic-plone-button-animation-transform);
+  -webkit-transition: var(--authomatic-plone-button-animation-transition);
+  svg {
+    box-shadow: 0 0 0.5em rgba(86, 87, 89, 0.5);
+  }
+}
+
+.PloneAuth {
+  display: flex;
+  max-width: var(--authomatic-plone-width);
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  line-height: 1.5;
+  .form {
+    padding: 10px;
+    .react-aria-TextField {
+      width: 100%;
+      padding: 10px 0px;
+      .react-aria-Label {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .react-aria-Input {
+        width: 100%;
+        padding: 10px 5px;
+        border-width: 0 0 0.05rem;
+        margin-top: 10px;
+        font-size: 18px;
+      }
+    }
+  }
+  .forgotPassword {
+    padding: 10px 10px 20px 10px;
+  }
+  .actions {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 20px 10px;
+    border-top: 1px solid #edf1f2;
+    > button {
+      border: unset;
+      &#login-form-submit {
+        color: var(--authomatic-plone-button-submit-color);
+        &:hover {
+          @include animate-network-hover();
+        }
+      }
+      &#login-form-cancel {
+        color: var(--authomatic-plone-button-cancel-color);
+        &:hover {
+          @include animate-network-hover();
+        }
+      }
+    }
+  }
+}

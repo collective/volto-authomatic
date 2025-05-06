@@ -1,0 +1,87 @@
+.authenticationProvider {
+  display: inline-flex;
+  width: var(--authomatic-button-width);
+  height: var(--authomatic-button-height);
+  align-items: center;
+  padding: var(--authomatic-button-padding);
+  border-radius: var(--authomatic-button-border-radius);
+  margin: var(--authomatic-button-margin);
+  background: var(--authomatic-provider-default-bg);
+  box-shadow: var(--authomatic-button-box-shadow);
+  color: var(--authomatic-provider-default-color);
+  &:hover {
+    border-radius: var(--authomatic-button-border-radius);
+    background: var(--authomatic-provider-default-bg-hover);
+    box-shadow: var(--authomatic-button-box-shadow);
+    color: var(--authomatic-provider-default-color-hover);
+  }
+  &#facebook {
+    border: var(--authomatic-provider-facebook-bg);
+    background: var(--authomatic-provider-facebook-bg);
+    color: var(--authomatic-provider-facebook-color);
+    &:hover {
+      background: var(--authomatic-provider-facebook-bg-hover);
+      color: var(--authomatic-provider-facebook-color-hover);
+    }
+  }
+  &#github {
+    border: var(--authomatic-provider-github-bg);
+    background: var(--authomatic-provider-github-bg);
+    color: var(--authomatic-provider-github-color);
+    &:hover {
+      background: var(--authomatic-provider-github-bg-hover);
+      color: var(--authomatic-provider-github-color-hover);
+    }
+  }
+  &#google {
+    border: var(--authomatic-provider-google-bg);
+    background: var(--authomatic-provider-google-bg);
+    color: var(--authomatic-provider-google-color);
+    &:hover {
+      background: var(--authomatic-provider-google-bg-hover);
+      color: var(--authomatic-provider-google-color-hover);
+    }
+  }
+  &#linkedin {
+    border: var(--authomatic-provider-linkedin-bg);
+    background: var(--authomatic-provider-linkedin-bg);
+    color: var(--authomatic-provider-linkedin-color);
+    &:hover {
+      background: var(--authomatic-provider-linkedin-bg-hover);
+      color: var(--authomatic-provider-linkedin-color-hover);
+    }
+  }
+  &#microsoft {
+    border: var(--authomatic-provider-microsoft-bg);
+    background: var(--authomatic-provider-microsoft-bg);
+    color: var(--authomatic-provider-microsoft-color);
+    &:hover {
+      background: var(--authomatic-provider-microsoft-bg-hover);
+      color: var(--authomatic-provider-microsoft-color-hover);
+    }
+  }
+  &#plone {
+    border: var(--authomatic-provider-plone-bg);
+    background: var(--authomatic-provider-plone-bg);
+    color: var(--authomatic-provider-plone-color);
+    &:hover {
+      background: var(--authomatic-provider-plone-bg-hover);
+      color: var(--authomatic-provider-plone-color-hover);
+    }
+  }
+  &#twitter {
+    border: var(--authomatic-provider-twitter-bg);
+    background: var(--authomatic-provider-twitter-bg);
+    color: var(--authomatic-provider-twitter-color);
+    &:hover {
+      background: var(--authomatic-provider-twitter-bg-hover);
+      color: var(--authomatic-provider-twitter-color-hover);
+    }
+  }
+  > .icon.provider {
+    padding: var(--authomatic-button-icon-padding);
+  }
+  > .label {
+    padding: var(--authomatic-button-label-padding);
+  }
+}

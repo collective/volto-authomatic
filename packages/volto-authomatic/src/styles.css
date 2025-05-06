@@ -1,0 +1,65 @@
+:root {
+  --authomatic-button-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px;
+  --authomatic-button-border-radius: 3px;
+  --authomatic-button-border-margin: 0.5rem auto;
+  --authomatic-button-width: 300px;
+  --authomatic-button-height: 45px;
+  --authomatic-button-icon-padding: 5px;
+  --authomatic-button-label-padding: 5px 0 5px 10px;
+  --authomatic-button-label-size: 20px;
+  --authomatic-button-padding: 5px;
+  --authomatic-button-margin: 3px;
+
+  --authomatic-provider-default-bg: #000 none repeat scroll 0% 0%;
+  --authomatic-provider-default-bg-hover: #000 none repeat scroll 0% 0%;
+  --authomatic-provider-default-color: #fff;
+  --authomatic-provider-default-color-hover: #fff;
+
+  --authomatic-provider-facebook-bg: #3b5998 none repeat scroll 0% 0%;
+  --authomatic-provider-facebook-bg-hover: #293e69 none repeat scroll 0% 0%;
+  --authomatic-provider-facebook-color: #fff;
+  --authomatic-provider-facebook-color-hover: #fff;
+
+  --authomatic-provider-github-bg: #333333 none repeat scroll 0% 0%;
+  --authomatic-provider-github-bg-hover: #555555 none repeat scroll 0% 0%;
+  --authomatic-provider-github-color: #fff;
+  --authomatic-provider-github-color-hover: #fff;
+
+  --authomatic-provider-google-bg: #fff none repeat scroll 0% 0%;
+  --authomatic-provider-google-bg-hover: #eff0ee none repeat scroll 0% 0%;
+  --authomatic-provider-google-color: #000;
+  --authomatic-provider-google-color-hover: #000;
+
+  --authomatic-provider-linkedin-bg: rgb(26, 129, 185) none repeat scroll 0% 0%;
+  --authomatic-provider-linkedin-bg-hover: rgb(7, 112, 169) none repeat scroll
+    0% 0%;
+  --authomatic-provider-linkedin-color: #fff;
+  --authomatic-provider-linkedin-color-hover: #fff;
+
+  --authomatic-provider-microsoft-bg: rgb(50, 159, 253) none repeat scroll 0% 0%;
+  --authomatic-provider-microsoft-bg-hover: rgb(0, 137, 255) none repeat scroll
+    0% 0%;
+  --authomatic-provider-microsoft-color: #fff;
+  --authomatic-provider-microsoft-color-hover: #fff;
+
+  --authomatic-provider-plone-bg: #0083be none repeat scroll 0% 0%;
+  --authomatic-provider-plone-bg-hover: #006c9e none repeat scroll 0% 0%;
+  --authomatic-provider-plone-color: #fff;
+  --authomatic-provider-plone-color-hover: #fff;
+
+  --authomatic-provider-twitter-bg: #000 none repeat scroll 0% 0%;
+  --authomatic-provider-twitter-bg-hover: #000 none repeat scroll 0% 0%;
+  --authomatic-provider-twitter-color: #fff;
+  --authomatic-provider-twitter-color-hover: #fff;
+
+  --authomatic-providers-margin: 1rem;
+  --authomatic-providers-padding: 0 0 1rem 0;
+  --authomatic-providers-text-align: center;
+
+  --authomatic-plone-width: 100%;
+  --authomatic-plone-button-submit-color: #007eb1;
+  --authomatic-plone-button-cancel-color: #ee0000;
+  --authomatic-plone-button-animation-transform: translateY(-2px);
+  --authomatic-plone-button-transition: all 0.4s
+    cubic-bezier(0.645, 0.045, 0.355, 1);
+}

@@ -1,0 +1,25 @@
+#page-login {
+  .loginForm {
+    width: 350px;
+    line-height: 1.5;
+    .wrapper {
+      border: 1px solid #c7d5d8;
+      margin: 1rem 0;
+      box-shadow:
+        0px 2px 4px 0px rgba(34, 36, 38, 0.12),
+        0px 2px 10px 0px rgba(34, 36, 38, 0.15);
+      .title {
+        padding: 16px;
+        border-bottom: 0.22222222rem solid #c7d5d8;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .description {
+        padding: 12px;
+        background-color: #edf1f2;
+        font-size: 12px;
+        font-weight: 200;
+      }
+    }
+  }
+}
