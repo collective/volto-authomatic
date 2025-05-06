@@ -12,24 +12,24 @@ export default function install(config: ConfigType) {
     /^\/login-oidc\/.*$/,
   ];
   config.addonRoutes.push(
-    { path: '/fallback_login', exact: true, component: VoltoLogin },
-    { path: '/failsafe_login', exact: true, component: VoltoLogin },
-    { path: '/login', exact: true, component: Login },
-    { path: '/**/login', exact: true, component: Login },
-    { path: '/logout', exact: true, component: Logout },
-    { path: '/**/logout', exact: true, component: Logout },
-    { path: '/register', exact: true, component: Login },
+    { path: '/fallback_login', exact: false, component: VoltoLogin },
+    { path: '/failsafe_login', exact: false, component: VoltoLogin },
+    { path: '/login', exact: false, component: Login },
+    { path: '/**/login', exact: false, component: Login },
+    { path: '/logout', exact: false, component: Logout },
+    { path: '/**/logout', exact: false, component: Logout },
+    { path: '/register', exact: false, component: Login },
     {
       path: `/(${config.settings?.supportedLanguages.join('|')})/register`,
-      exact: true,
+      exact: false,
       component: Login,
     },
     {
       path: '/login-authomatic/:provider',
-      exact: true,
+      exact: false,
       component: Authomatic,
     },
-    { path: '/login-oidc/:provider', exact: true, component: OIDC },
+    { path: '/login-oidc/:provider', exact: false, component: OIDC },
   );
   return config;
 }
