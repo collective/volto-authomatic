@@ -1,6 +1,6 @@
 {
   "name": "@plone-collective/volto-authomatic",
-  "version": "3.0.0-alpha.0",
+  "version": "3.0.0-alpha.1",
   "description": "Social Login with OAuth2/OpenId for Volto sites.",
   "main": "src/index.ts",
   "license": "MIT",
@@ -30,8 +30,7 @@
     "release-alpha": "release-it --preRelease=alpha"
   },
   "addons": [],
-  "dependencies": {
-  },
+  "dependencies": {},
   "peerDependencies": {
     "@plone/components": "workspace:*",
     "@plone/registry": "workspace:*",
