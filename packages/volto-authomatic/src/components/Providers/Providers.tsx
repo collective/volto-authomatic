@@ -33,7 +33,7 @@ const Providers: React.FC<ProvidersProps> = ({
   return (
     <Container id="authenticationProviders">
       {providers.map((provider, i) =>
-        provider && provider.id !== 'oidc' ? (
+        provider ? (
           <AuthProvider
             key={provider.id || i}
             provider={provider}

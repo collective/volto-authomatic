@@ -107,10 +107,10 @@ const Login: React.FC = () => {
   const onSelectProvider = (selectedProvider: AuthProviderOption) => {
     setCookie('return_url', getReturnUrl(location), { path: '/' });
     setPlugin(selectedProvider.plugin);
-    if (plugin === 'oidc') {
+    if (selectedProvider.plugin === 'oidc') {
       setStartedOIDC(true);
       dispatch(oidcRedirect(selectedProvider.id));
-    } else if (plugin === 'PlonePAS') {
+    } else if (selectedProvider.plugin === 'PlonePAS') {
       setStartedOIDC(false);
       setStartedOAuth(false);
     } else {
