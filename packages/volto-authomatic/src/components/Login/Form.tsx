@@ -32,28 +32,27 @@ const Form: React.FC<FormProps> = ({
 }) => {
   const intl = useIntl();
 
-  const validProviders = providers.filter((provider) => provider.id !== 'oidc');
-  const displayProviders = validProviders.length > 0 && plugin !== 'PlonePAS';
+  const displayProviders = providers.length > 0 && plugin !== 'PlonePAS';
   const descriptionMsg = loading
     ? messages.loading
     : displayProviders
       ? messages.LoginProviderDescription
       : messages.LoginDescription;
-
+  console.log(providers, loading, plugin);
   return (
     <LoginForm
       title={intl.formatMessage(messages.Login)}
       description={intl.formatMessage(descriptionMsg)}
     >
       <>
-        {loading ? (
+        {loading || plugin === 'oidc' ? (
           <Loading
             display={true}
             message={intl.formatMessage(messages.loading)}
           />
         ) : displayProviders ? (
           <Providers
-            providers={validProviders}
+            providers={providers}
             displayPlone={displayPlone}
             action={action}
             onSelectProvider={onSelectProvider}

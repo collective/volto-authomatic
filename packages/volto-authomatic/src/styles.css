@@ -42,6 +42,11 @@
   --authomatic-provider-microsoft-color: #fff;
   --authomatic-provider-microsoft-color-hover: #fff;
 
+  --authomatic-provider-oidc-bg: #333333 none repeat scroll 0% 0%;
+  --authomatic-provider-oidc-bg-hover: #555555 none repeat scroll 0% 0%;
+  --authomatic-provider-oidc-color: #fff;
+  --authomatic-provider-oidc-color-hover: #fff;
+
   --authomatic-provider-plone-bg: #0083be none repeat scroll 0% 0%;
   --authomatic-provider-plone-bg-hover: #006c9e none repeat scroll 0% 0%;
   --authomatic-provider-plone-color: #fff;

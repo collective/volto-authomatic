@@ -4,6 +4,7 @@ import google from './google.svg';
 import linkedin from './linkedin.svg';
 import microsoft from './microsoft.svg';
 import plone from '@plone/volto/icons/plone.svg';
+import oidc from './openid.svg';
 import twitter from './twitter.svg';
 
 const icons: Record<
@@ -12,6 +13,7 @@ const icons: Record<
   | 'google'
   | 'linkedin'
   | 'microsoft'
+  | 'oidc'
   | 'plone'
   | 'twitter',
   string
@@ -21,6 +23,7 @@ const icons: Record<
   google,
   linkedin,
   microsoft,
+  oidc,
   plone,
   twitter,
 };

@@ -60,6 +60,15 @@
       color: var(--authomatic-provider-microsoft-color-hover);
     }
   }
+  &#oidc {
+    border: var(--authomatic-provider-oidc-bg);
+    background: var(--authomatic-provider-oidc-bg);
+    color: var(--authomatic-provider-oidc-color);
+    &:hover {
+      background: var(--authomatic-provider-oidc-bg-hover);
+      color: var(--authomatic-provider-oidc-color-hover);
+    }
+  }
   &#plone {
     border: var(--authomatic-provider-plone-bg);
     background: var(--authomatic-provider-plone-bg);

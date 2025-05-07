@@ -95,12 +95,14 @@ const Login: React.FC = () => {
     if (
       providers !== undefined &&
       providers.length === 1 &&
-      providers[0].id === 'oidc'
+      providers[0].id === 'oidc' &&
+      !displayPlone
     ) {
+      setPlugin(providers[0].plugin);
       setStartedOIDC(true);
       dispatch(oidcRedirect('oidc'));
     }
-  }, [providers, dispatch]);
+  }, [displayPlone, providers, dispatch]);
 
   const onSelectProvider = (selectedProvider: AuthProviderOption) => {
     setCookie('return_url', getReturnUrl(location), { path: '/' });

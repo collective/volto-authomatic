@@ -78,6 +78,17 @@ MicrosoftRegister.args = {
   action: 'register',
 };
 
+export const OIDCLogin = StoryComponent.bind({});
+OIDCLogin.args = {
+  provider: providers.oidc,
+  action: 'login',
+};
+export const OIDCRegister = StoryComponent.bind({});
+OIDCRegister.args = {
+  provider: providers.oidc,
+  action: 'register',
+};
+
 export const XLogin = StoryComponent.bind({});
 XLogin.args = {
   provider: providers.twitter,
