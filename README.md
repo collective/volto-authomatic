@@ -1,6 +1,6 @@
 <div align="center"><img alt="logo" src="https://raw.githubusercontent.com/collective/pas.plugins.oidc/main/docs/_static/icon.png" width="70" /></div>
 
-<h1 align="center">OAuth2 / OpenId Authentication in Volto</h1>
+<h1 align="center">OAuth2 / OpenId Authentication in Volto (@plone-collective/volto-authomatic)</h1>
 
 Addon implementing OAuth2 / OpenId Login in Volto sites.
 
@@ -11,7 +11,6 @@ This addon requires a server-side package to be installed. Currently we support 
 
 
 <div align="center">
-# OAuth2 / OpenId Authentication in Volto (@plone-collective/volto-authomatic)
 
 Social Login with OAuth2/OpenId for Volto sites.
 
