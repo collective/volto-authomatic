@@ -1,0 +1,107 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-06T16:01:32.969Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Language: \n"
+"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Language-Code: pt_BR\n"
+"Language-Name: Português do Brasil\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: volto\n"
+
+#. Default: "Authenticating"
+#: messages
+msgid "Authenticating"
+msgstr ""
+
+#. Default: "Authentication failed."
+#: messages
+msgid "Authentication failed."
+msgstr ""
+
+#. Default: "Both email address and password are case sensitive, check that caps lock is not enabled."
+#: messages
+msgid "Both email address and password are case sensitive, check that caps lock is not enabled."
+msgstr ""
+
+#. Default: "Cancel"
+#: messages
+msgid "Cancel"
+msgstr ""
+
+#. Default: "Error"
+#: messages
+msgid "Error"
+msgstr ""
+
+#. Default: "Loading"
+#: messages
+msgid "Loading"
+msgstr ""
+
+#. Default: "Log in"
+#: messages
+msgid "Log in"
+msgstr ""
+
+#. Default: "Log in with"
+#: messages
+msgid "Log in with"
+msgstr ""
+
+#. Default: "Login"
+#: messages
+msgid "Login"
+msgstr ""
+
+#. Default: "Login Failed"
+#: messages
+msgid "Login Failed"
+msgstr ""
+
+#. Default: "Login Name"
+#: messages
+msgid "Login Name"
+msgstr ""
+
+#. Default: "Password"
+#: messages
+msgid "Password"
+msgstr ""
+
+#. Default: "Register"
+#: messages
+msgid "Register"
+msgstr ""
+
+#. Default: "Select Login Provider"
+#: messages
+msgid "Select Login Provider"
+msgstr ""
+
+#. Default: "Sign in to start session"
+#: messages
+msgid "Sign in to start session"
+msgstr ""
+
+#. Default: "Sign up with"
+#: messages
+msgid "Sign up with"
+msgstr ""
+
+#. Default: "You have been logged out"
+#: messages
+msgid "You have been logged out"
+msgstr ""
+
+#. Default: "Forgot your password?"
+#: messages
+msgid "box_forgot_password_option"
+msgstr ""

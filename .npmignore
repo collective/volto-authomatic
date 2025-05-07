@@ -8,9 +8,9 @@ npm-debug.log*
 yarn-error.log
 
 node_modules
+dockerfiles
+acceptance
 build
 dist
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+yarn.lock
+.storybook
