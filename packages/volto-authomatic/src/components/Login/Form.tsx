@@ -38,7 +38,6 @@ const Form: React.FC<FormProps> = ({
     : displayProviders
       ? messages.LoginProviderDescription
       : messages.LoginDescription;
-  console.log(providers, loading, plugin);
   return (
     <LoginForm
       title={intl.formatMessage(messages.Login)}
