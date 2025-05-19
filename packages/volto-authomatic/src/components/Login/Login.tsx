@@ -95,12 +95,12 @@ const Login: React.FC = () => {
     if (
       providers !== undefined &&
       providers.length === 1 &&
-      providers[0].id === 'oidc' &&
+      providers[0].plugin === 'oidc' &&
       !displayPlone
     ) {
       setPlugin(providers[0].plugin);
       setStartedOIDC(true);
-      dispatch(oidcRedirect('oidc'));
+      dispatch(oidcRedirect(providers[0].id));
     }
   }, [displayPlone, providers, dispatch]);
 
