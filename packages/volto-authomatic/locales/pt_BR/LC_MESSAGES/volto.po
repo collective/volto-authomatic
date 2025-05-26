@@ -19,89 +19,89 @@ msgstr ""
 #. Default: "Authenticating"
 #: messages
 msgid "Authenticating"
-msgstr ""
+msgstr "Autenticando"
 
 #. Default: "Authentication failed."
 #: messages
 msgid "Authentication failed."
-msgstr ""
+msgstr "Falha na autenticaćão."
 
 #. Default: "Both email address and password are case sensitive, check that caps lock is not enabled."
 #: messages
 msgid "Both email address and password are case sensitive, check that caps lock is not enabled."
-msgstr ""
+msgstr "Tanto o endereço de email como a senha diferencial letras maiúsculas de minúsculas, verifique se o caps lock não está habilitado."
 
 #. Default: "Cancel"
 #: messages
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #. Default: "Error"
 #: messages
 msgid "Error"
-msgstr ""
+msgstr "Erro"
 
 #. Default: "Loading"
 #: messages
 msgid "Loading"
-msgstr ""
+msgstr "Carregando"
 
 #. Default: "Log in"
 #: messages
 msgid "Log in"
-msgstr ""
+msgstr "Autenticar"
 
 #. Default: "Log in with"
 #: messages
 msgid "Log in with"
-msgstr ""
+msgstr "Entrar com"
 
 #. Default: "Login"
 #: messages
 msgid "Login"
-msgstr ""
+msgstr "Acessar"
 
 #. Default: "Login Failed"
 #: messages
 msgid "Login Failed"
-msgstr ""
+msgstr "Falha no acesso"
 
 #. Default: "Login Name"
 #: messages
 msgid "Login Name"
-msgstr ""
+msgstr "Usuário"
 
 #. Default: "Password"
 #: messages
 msgid "Password"
-msgstr ""
+msgstr "Senha"
 
 #. Default: "Register"
 #: messages
 msgid "Register"
-msgstr ""
+msgstr "Criar conta"
 
 #. Default: "Select Login Provider"
 #: messages
 msgid "Select Login Provider"
-msgstr ""
+msgstr "Escolha o provedor de autenticaćão"
 
 #. Default: "Sign in to start session"
 #: messages
 msgid "Sign in to start session"
-msgstr ""
+msgstr "Acesse para iniciar uma sessão"
 
 #. Default: "Sign up with"
 #: messages
 msgid "Sign up with"
-msgstr ""
+msgstr "Cadastrar usando"
 
 #. Default: "You have been logged out"
 #: messages
 msgid "You have been logged out"
-msgstr ""
+msgstr "Você não está mais autenticado"
 
 #. Default: "Forgot your password?"
 #: messages
 msgid "box_forgot_password_option"
-msgstr ""
+msgstr "Esqueceu a senha?"

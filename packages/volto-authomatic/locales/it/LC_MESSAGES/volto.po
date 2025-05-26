@@ -21,12 +21,12 @@ msgstr ""
 #. Default: "Authenticating"
 #: messages
 msgid "Authenticating"
-msgstr "Autenticando"
+msgstr ""
 
 #. Default: "Authentication failed."
 #: messages
 msgid "Authentication failed."
-msgstr "Autenticación fallida."
+msgstr ""
 
 #. Default: "Both email address and password are case sensitive, check that caps lock is not enabled."
 #: messages
@@ -56,17 +56,17 @@ msgstr ""
 #. Default: "Log in with"
 #: messages
 msgid "Log in with"
-msgstr "Inicio de sesión con"
+msgstr ""
 
 #. Default: "Login"
 #: messages
 msgid "Login"
-msgstr "Inicio de sesión"
+msgstr ""
 
 #. Default: "Login Failed"
 #: messages
 msgid "Login Failed"
-msgstr "Inicio de Sesión fallo"
+msgstr ""
 
 #. Default: "Login Name"
 #: messages
@@ -86,7 +86,7 @@ msgstr ""
 #. Default: "Select Login Provider"
 #: messages
 msgid "Select Login Provider"
-msgstr "Seleccionar proveedor de inicio de sesión"
+msgstr ""
 
 #. Default: "Sign in to start session"
 #: messages
@@ -96,7 +96,7 @@ msgstr ""
 #. Default: "Sign up with"
 #: messages
 msgid "Sign up with"
-msgstr "Regístrate con"
+msgstr ""
 
 #. Default: "You have been logged out"
 #: messages
