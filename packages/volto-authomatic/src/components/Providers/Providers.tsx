@@ -22,7 +22,8 @@ const Providers: React.FC<ProvidersProps> = ({
   action,
   onSelectProvider,
 }) => {
-  if (displayPlone === true) {
+  const providerIds = providers.map((provider) => provider.id);
+  if (displayPlone === true && !providerIds.includes('plone')) {
     providers.push({
       id: 'plone',
       plugin: 'PlonePAS',
