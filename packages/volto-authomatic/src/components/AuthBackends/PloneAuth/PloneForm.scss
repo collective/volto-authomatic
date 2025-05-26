@@ -41,6 +41,9 @@
     border-top: 1px solid #edf1f2;
     > button {
       border: unset;
+      &.react-aria-Button {
+        background-color: transparent !important;
+      }
       &#login-form-submit {
         color: var(--authomatic-plone-button-submit-color);
         &:hover {

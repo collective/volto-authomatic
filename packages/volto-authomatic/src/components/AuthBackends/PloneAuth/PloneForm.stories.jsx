@@ -7,7 +7,13 @@ const onLogin = (event) => {};
 const StoryComponent = ({ children, ...args }) => {
   return (
     <Wrapper>
-      <div style={{ maxWidth: '600px', margin: 'auto' }}>
+      <div
+        style={{
+          maxWidth: '600px',
+          margin: 'auto',
+          backgroundColor: '#f0f0f7',
+        }}
+      >
         <PloneForm {...args} onSubmit={onLogin} />
       </div>
     </Wrapper>
