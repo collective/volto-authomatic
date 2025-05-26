@@ -12,6 +12,7 @@ import { logout } from '@plone/volto/actions/userSession/userSession';
 import { purgeMessages } from '@plone/volto/actions/messages/messages';
 import { oidcLogout } from '@plone-collective/volto-authomatic/actions/auth/oidc';
 
+import LogoutPage from './LogoutPage';
 import messages from '@plone-collective/volto-authomatic/messages';
 
 interface RootState {
@@ -51,11 +52,7 @@ const Logout: React.FC = () => {
     }
   }, [logoutOIDCValues]);
 
-  return displayLogout ? (
-    <div id="page-logout">
-      <Container>{intl.formatMessage(messages.loggedOut)}</Container>
-    </div>
-  ) : null;
+  return displayLogout ? <LogoutPage /> : null;
 };
 
 export default Logout;
