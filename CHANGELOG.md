@@ -8,6 +8,19 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.2 (2025-05-26)
+
+### Feature
+
+- Update pt_BR translations. @ericof 
+
+### Bugfix
+
+- Do not require plugin id to be oidc @erral [#24](https://github.com/collective/volto-authomatic/issue/24)
+- Avoid duplicating "Login with Plone" options on Login form. @ericof [#26](https://github.com/collective/volto-authomatic/issue/26)
+- Apply basic styling to Logout component. @ericof [#27](https://github.com/collective/volto-authomatic/issue/27)
+- Fixes background-color for login form buttons. @ericof [#29](https://github.com/collective/volto-authomatic/issue/29)
+
 ## 3.0.0-alpha.1 (2025-05-06)
 
 ### Feature
