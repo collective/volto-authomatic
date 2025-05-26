@@ -4,8 +4,6 @@
  */
 
 import React, { useEffect, useState } from 'react';
-import { Container } from '@plone/components';
-import { useIntl } from 'react-intl';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { logout } from '@plone/volto/actions/userSession/userSession';
@@ -13,7 +11,6 @@ import { purgeMessages } from '@plone/volto/actions/messages/messages';
 import { oidcLogout } from '@plone-collective/volto-authomatic/actions/auth/oidc';
 
 import LogoutPage from './LogoutPage';
-import messages from '@plone-collective/volto-authomatic/messages';
 
 interface RootState {
   oidcRedirect: {
@@ -25,7 +22,6 @@ interface RootState {
 }
 
 const Logout: React.FC = () => {
-  const intl = useIntl();
   const dispatch = useDispatch();
   const [displayLogout, setDisplayLogout] = useState(false);
 
