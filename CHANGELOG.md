@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.3 (2025-06-04)
+
+### Bugfix
+
+- Fixed login form CSS styling and inconsistencies in @plone/components elements. @sneridagh 
+
 ## 3.0.0-alpha.2 (2025-05-26)
 
 ### Feature

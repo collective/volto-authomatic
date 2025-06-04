@@ -1,6 +1,6 @@
 {
   "name": "@plone-collective/volto-authomatic",
-  "version": "3.0.0-alpha.2",
+  "version": "3.0.0-alpha.3",
   "description": "Social Login with OAuth2/OpenId for Volto sites.",
   "main": "src/index.ts",
   "license": "MIT",
