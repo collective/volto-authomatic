@@ -28,6 +28,9 @@
         border-width: 0 0 0.05rem;
         margin-top: 10px;
         font-size: 18px;
+        &:not(:focus) {
+          border-radius: 0;
+        }
       }
     }
   }
@@ -41,20 +44,18 @@
     border-top: 1px solid #edf1f2;
     > button {
       border: unset;
+      cursor: pointer;
+
       &.react-aria-Button {
         background-color: transparent !important;
       }
+
       &#login-form-submit {
         color: var(--authomatic-plone-button-submit-color);
-        &:hover {
-          @include animate-network-hover();
-        }
       }
+
       &#login-form-cancel {
         color: var(--authomatic-plone-button-cancel-color);
-        &:hover {
-          @include animate-network-hover();
-        }
       }
     }
   }
