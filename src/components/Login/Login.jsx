@@ -63,6 +63,7 @@ function Login({ intl }) {
     const next_url = loginOIDCValues.next_url;
     if (next_url && startedOIDC) {
       setStartedOIDC(false);
+      setCookie('return_url', getReturnUrl(location), { path: '/' });
       // Give time to save state to localstorage
       setTimeout(function () {
         window.location.href = next_url;

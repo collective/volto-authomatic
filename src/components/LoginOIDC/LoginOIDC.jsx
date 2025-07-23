@@ -10,6 +10,7 @@ import { Toast } from '@plone/volto/components';
 import { defineMessages, injectIntl } from 'react-intl';
 import { useParams, useLocation, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useCookies } from 'react-cookie';
 
 const messages = defineMessages({
   oAuthLoginFailed: {
@@ -41,6 +42,8 @@ function LoginOIDC({ intl }) {
   const isLoading = userSession.login.loading;
   const error = userSession.login.error;
   const token = userSession.token;
+  const [cookies, , removeCookie] = useCookies();
+  const return_url = cookies.return_url || '/';
 
   useEffect(() => {
     dispatch(oidcLogin(provider, query, session));
@@ -48,7 +51,8 @@ function LoginOIDC({ intl }) {
 
   useEffect(() => {
     if (token) {
-      history.push('/');
+      window.setTimeout(() => removeCookie('return_url', { path: '/' }), 500);
+      history.push(return_url);
       if (toast.isActive('loginFailed')) {
         toast.dismiss('loginFailed');
       }
