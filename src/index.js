@@ -22,6 +22,7 @@ const applyConfig = (config) => {
   ];
   config.addonRoutes.push(
     { path: '/fallback_login', component: FallbackLogin },
+    { path: '/**/fallback_login', component: FallbackLogin },
     { path: '/login', component: Login },
     { path: '/**/login', component: Login },
     { path: '/logout', component: Logout },

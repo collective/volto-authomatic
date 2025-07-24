@@ -7,8 +7,9 @@ export default function FallbackLogin(props) {
   // Login component doesn't support passing in a return_url so let's set it
   //   via the querystring so the component can read it.
   useEffect(() => {
+    const pathname = history.location.pathname.replace(/\/fallback_login\/?$/, '') || '/';
     const url = new URL(window.location.href);
-    url.searchParams.set('return_url', '/');
+    url.searchParams.set('return_url', pathname);
     history.replace(`${history.location.pathname}?${url.searchParams.toString()}`);
   }, [history]);
 
