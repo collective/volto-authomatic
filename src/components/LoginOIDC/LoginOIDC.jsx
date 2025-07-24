@@ -1,9 +1,6 @@
 /**
  * LoginOIDC container.
  * @module components/LoginOIDC/LoginOIDC
- *
- * Commented out redirects to `/` on login
- * Added check for login progress to prevent multiple requests being fired
  */
 import React, { useEffect } from 'react';
 import { oidcLogin } from '../../actions';
