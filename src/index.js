@@ -14,12 +14,7 @@ const applyConfig = (config) => {
     oidcRedirect,
   };
   config.settings.persistentReducers = [...config.settings.persistentReducers, 'authomaticRedirect', 'oidcLogout', 'oidcRedirect'];
-  config.settings.nonContentRoutes = [
-    ...config.settings.nonContentRoutes,
-    /^\/login-authomatic\/.*$/,
-    /^\/login-oidc\/.*$/,
-    '/fallback_login',
-  ];
+  config.settings.nonContentRoutes = [...config.settings.nonContentRoutes, /^\/login-authomatic\/.*$/, /^\/login-oidc\/.*$/, '/fallback_login'];
   config.addonRoutes.push(
     { path: '/fallback_login', component: FallbackLogin },
     { path: '/**/fallback_login', component: FallbackLogin },
