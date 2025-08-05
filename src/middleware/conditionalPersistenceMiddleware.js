@@ -27,7 +27,6 @@ const preventAnonymousLocalStorage = () => {
       }
     });
   } catch (error) {
-    console.debug('LocalStorage cleanup skipped:', error.message);
   }
 };
 
