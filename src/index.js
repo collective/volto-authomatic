@@ -1,4 +1,5 @@
 import Login from './components/Login/Login';
+import conditionalPersistenceMiddleware from './middleware/conditionalPersistenceMiddleware';
 import LoginAuthomatic from './components/LoginAuthomatic/LoginAuthomatic';
 import LoginOIDC from './components/LoginOIDC/LoginOIDC';
 import Logout from './components/Logout/Logout';
