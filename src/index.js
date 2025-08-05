@@ -13,7 +13,7 @@ const applyConfig = (config) => {
     oidcLogout,
     oidcRedirect,
   };
-  config.settings.persistentReducers = [...config.settings.persistentReducers, 'authomaticRedirect', 'oidcLogout', 'oidcRedirect'];
+  config.settings.storeExtenders = [...(config.settings.storeExtenders || []), (middlewares) => [conditionalPersistenceMiddleware, ...middlewares]];
   config.settings.nonContentRoutes = [...config.settings.nonContentRoutes, /^\/login-authomatic\/.*$/, /^\/login-oidc\/.*$/];
   config.addonRoutes.push(
     { path: '/fallback_login', component: VoltoLogin },
