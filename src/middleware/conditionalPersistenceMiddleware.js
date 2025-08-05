@@ -26,8 +26,7 @@ const preventAnonymousLocalStorage = () => {
         window.localStorage.removeItem(key);
       }
     });
-  } catch (error) {
-  }
+  } catch (error) {}
 };
 
 /**
