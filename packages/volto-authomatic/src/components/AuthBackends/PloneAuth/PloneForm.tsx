@@ -62,7 +62,7 @@ const PloneForm: React.FC<PloneFormProps> = ({ onLogin, error, loading }) => {
           placeholder={intl.formatMessage(messages.password)}
           autoComplete="current-password"
           isRequired
-          isInvalid={error}
+          errorMessage={error}
           value={passwordValue}
           onChange={setPasswordValue}
         />
