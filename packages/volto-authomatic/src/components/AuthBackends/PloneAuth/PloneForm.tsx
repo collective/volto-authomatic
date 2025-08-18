@@ -22,7 +22,7 @@ interface PloneFormProps {
   loading: boolean;
 }
 
-const PloneForm: React.FC<PloneFormProps> = ({ onLogin, error, loading }) => {
+const PloneForm: React.FC<PloneFormProps> = ({ onLogin, loading }) => {
   const intl = useIntl();
   const [loginValue, setLoginValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
@@ -62,7 +62,6 @@ const PloneForm: React.FC<PloneFormProps> = ({ onLogin, error, loading }) => {
           placeholder={intl.formatMessage(messages.password)}
           autoComplete="current-password"
           isRequired
-          isInvalid={error}
           value={passwordValue}
           onChange={setPasswordValue}
         />
