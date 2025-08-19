@@ -1,7 +1,6 @@
 /**
  * Conditional Persistence Middleware
  * Prevents local storage initialization for authentication reducers when user is anonymous
- * This addresses GDPR/EUDPR compliance requirements for the EEA website
  * @module middleware/conditionalPersistenceMiddleware
  */
 
