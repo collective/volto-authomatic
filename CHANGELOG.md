@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.4 (2025-08-21)
+
+### Feature
+
+- Update Spanish translations #32. @macagua [#32](https://github.com/collective/volto-authomatic/issue/32)
+
+### Bugfix
+
+- Fix login form blocking submission after wrong password attempt. [@jnptk] [#39](https://github.com/collective/volto-authomatic/issue/39)
+
 ## 3.0.0-alpha.3 (2025-06-04)
 
 ### Bugfix
