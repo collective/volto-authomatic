@@ -1,10 +1,10 @@
+import FallbackLogin from './components/FallbackLogin';
 import Login from './components/Login/Login';
 import conditionalPersistenceMiddleware from './middleware/conditionalPersistenceMiddleware';
 import LoginAuthomatic from './components/LoginAuthomatic/LoginAuthomatic';
 import LoginOIDC from './components/LoginOIDC/LoginOIDC';
 import Logout from './components/Logout/Logout';
 import { authomaticRedirect, authOptions, oidcLogout, oidcRedirect } from './reducers';
-import { Login as VoltoLogin } from '@plone/volto/components';
 
 const applyConfig = (config) => {
   config.addonReducers = {
@@ -14,10 +14,12 @@ const applyConfig = (config) => {
     oidcLogout,
     oidcRedirect,
   };
+
   config.settings.storeExtenders = [...(config.settings.storeExtenders || []), (middlewares) => [conditionalPersistenceMiddleware, ...middlewares]];
   config.settings.nonContentRoutes = [...config.settings.nonContentRoutes, /^\/login-authomatic\/.*$/, /^\/login-oidc\/.*$/];
   config.addonRoutes.push(
-    { path: '/fallback_login', component: VoltoLogin },
+    { path: '/fallback_login', component: FallbackLogin },
+    { path: '/**/fallback_login', component: FallbackLogin },
     { path: '/login', component: Login },
     { path: '/**/login', component: Login },
     { path: '/logout', component: Logout },
