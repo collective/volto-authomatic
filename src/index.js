@@ -1,5 +1,6 @@
 import FallbackLogin from './components/FallbackLogin';
 import Login from './components/Login/Login';
+import conditionalPersistenceMiddleware from './middleware/conditionalPersistenceMiddleware';
 import LoginAuthomatic from './components/LoginAuthomatic/LoginAuthomatic';
 import LoginOIDC from './components/LoginOIDC/LoginOIDC';
 import Logout from './components/Logout/Logout';
@@ -13,8 +14,9 @@ const applyConfig = (config) => {
     oidcLogout,
     oidcRedirect,
   };
-  config.settings.persistentReducers = [...config.settings.persistentReducers, 'authomaticRedirect', 'oidcLogout', 'oidcRedirect'];
-  config.settings.nonContentRoutes = [...config.settings.nonContentRoutes, /^\/login-authomatic\/.*$/, /^\/login-oidc\/.*$/, '/fallback_login'];
+
+  config.settings.storeExtenders = [...(config.settings.storeExtenders || []), (middlewares) => [conditionalPersistenceMiddleware, ...middlewares]];
+  config.settings.nonContentRoutes = [...config.settings.nonContentRoutes, /^\/login-authomatic\/.*$/, /^\/login-oidc\/.*$/];
   config.addonRoutes.push(
     { path: '/fallback_login', component: FallbackLogin },
     { path: '/**/fallback_login', component: FallbackLogin },

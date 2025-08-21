@@ -1,29 +1,29 @@
 # Changelog
 
+## [2.0.2](https://github.com/collective/volto-authomatic/compare/2.0.1...2.0.2) (2025-08-19)
+
+### Bug Fixes
+
+- Remove unnecessary local storage (redux) for anonymous users (#38) - Prevents auth reducer data from being stored in local storage when users are not authenticated, improving performance and reducing unnecessary data persistence
+
 ## [2.0.1](https://github.com/collective/volto-authomatic/compare/2.0.0...2.0.1) (2024-01-23)
 
 ## [2.0.0](https://github.com/collective/volto-authomatic/compare/1.3.0...2.0.0) (2023-11-17)
 
-
 ### Features
-
 
 - feat: Add support for pas.plugins.oidc (#12) ([fe191764b7f81f2c87a7618e165cfa3f23cb60aa](https://github.com/collective/volto-authomatic/commit/fe191764b7f81f2c87a7618e165cfa3f23cb60aa))
 - feat: Added Spanish support ([cd760708797b3465b88b96594c77ea3811a96828](https://github.com/collective/volto-authomatic/commit/cd760708797b3465b88b96594c77ea3811a96828))
 
 ## [1.3.0](https://github.com/collective/volto-authomatic/compare/1.2.0...1.3.0) (2022-12-05)
 
-
 ### Features
-
 
 - feat: Add fallback_login route pointing to the normal login form ([7cc9cffda2a0aab50f2c9729a60aeae709fca4d4](https://github.com/collective/volto-authomatic/commit/7cc9cffda2a0aab50f2c9729a60aeae709fca4d4))
 
 ## [1.2.0](https://github.com/collective/volto-authomatic/compare/1.1.0...1.2.0) (2022-07-25)
 
-
 ### Features
-
 
 - feat: Apply i18n to Login and Logout views ([0c996958828e18e4d058e0fa2c8d4806297764ff](https://github.com/collective/volto-authomatic/commit/0c996958828e18e4d058e0fa2c8d4806297764ff))
 - feat: Rename package to @plone-collective/volto-authomatic ([8bdd8dd1d6e7f676f05f47db449307fbd5ba026e](https://github.com/collective/volto-authomatic/commit/8bdd8dd1d6e7f676f05f47db449307fbd5ba026e))
