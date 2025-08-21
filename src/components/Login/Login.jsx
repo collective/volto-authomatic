@@ -69,7 +69,7 @@ function Login({ intl }) {
         window.location.href = next_url;
       }, 500);
     }
-  }, [startedOIDC, loginOIDCValues]);
+  }, [startedOIDC, loginOIDCValues]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (options !== undefined && options.length === 1 && options[0].id === 'oidc') {
