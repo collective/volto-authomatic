@@ -1,7 +1,7 @@
 /**
  * Conditional Persistence Middleware
- * 
- * This middleware prevents unnecessary local storage (Redux persist) 
+ *
+ * This middleware prevents unnecessary local storage (Redux persist)
  * initialization for authentication reducers when the user is anonymous.
  * This improves performance and GDPR compliance by reducing localStorage usage.
  */
@@ -28,8 +28,8 @@ interface RootState {
 function isUserAuthenticated(state: RootState): boolean {
   const userSession = state.userSession;
   return !!(
-    userSession?.user?.id || 
-    userSession?.user?.username || 
+    userSession?.user?.id ||
+    userSession?.user?.username ||
     userSession?.login?.loaded
   );
 }
@@ -44,12 +44,12 @@ function removeAuthReducerDataFromStorage(): void {
       const persistedState = localStorage.getItem(persistKey);
       if (persistedState) {
         const parsedState = JSON.parse(persistedState);
-        
+
         // Remove authentication-related reducers for anonymous users
         delete parsedState.authomaticRedirect;
         delete parsedState.oidcLogout;
         delete parsedState.oidcRedirect;
-        
+
         localStorage.setItem(persistKey, JSON.stringify(parsedState));
       }
     } catch (error) {
@@ -61,16 +61,17 @@ function removeAuthReducerDataFromStorage(): void {
 /**
  * Middleware to conditionally handle persistence for authentication reducers
  */
-export const conditionalPersistenceMiddleware = (store: any) => (next: any) => (action: any) => {
-  const result = next(action);
-  const state = store.getState() as RootState;
-  
-  // If user is not authenticated, remove auth reducer data from localStorage
-  if (!isUserAuthenticated(state)) {
-    removeAuthReducerDataFromStorage();
-  }
-  
-  return result;
-};
+export const conditionalPersistenceMiddleware =
+  (store: any) => (next: any) => (action: any) => {
+    const result = next(action);
+    const state = store.getState() as RootState;
+
+    // If user is not authenticated, remove auth reducer data from localStorage
+    if (!isUserAuthenticated(state)) {
+      removeAuthReducerDataFromStorage();
+    }
+
+    return result;
+  };
 
 export default conditionalPersistenceMiddleware;
