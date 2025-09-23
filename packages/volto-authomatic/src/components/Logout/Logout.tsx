@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '@plone/volto/actions/userSession/userSession';
 import { purgeMessages } from '@plone/volto/actions/messages/messages';
 import { oidcLogout } from '@plone-collective/volto-authomatic/actions/auth/oidc';
+import { listActions } from '@plone/volto/actions/actions/actions';
 
 import LogoutPage from './LogoutPage';
 
@@ -24,6 +25,7 @@ interface RootState {
 const Logout: React.FC = () => {
   const dispatch = useDispatch();
   const [displayLogout, setDisplayLogout] = useState(false);
+  const logoutSuccess = useSelector((state: any) => state.userSession.token);
 
   const OIDCValues = useSelector((state: RootState) => state.oidcRedirect);
   const logoutOIDCValues = useSelector((state: RootState) => state.oidcLogout);
@@ -38,6 +40,12 @@ const Logout: React.FC = () => {
     dispatch(logout());
     dispatch(purgeMessages());
   }, [dispatch, OIDCValues]);
+
+  useEffect(() => {
+    if (displayLogout && logoutSuccess === null) {
+      dispatch(listActions('/'));
+    }
+  }, [displayLogout, dispatch, logoutSuccess]);
 
   useEffect(() => {
     const next_url = logoutOIDCValues.next_url;
