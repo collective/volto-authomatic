@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.5 (2025-09-25)
+
+### Feature
+
+- Add support for redirecting users after logout. @iFlameing 
+
+### Bugfix
+
+- Fix the issue where the Logout button does not change back to Login after logging out. @iFlameing 
+
 ## 3.0.0-alpha.4 (2025-08-21)
 
 ### Feature

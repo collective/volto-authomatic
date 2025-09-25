@@ -1,1 +1,0 @@
-Add support for redirecting users after logout. @iFlameing
