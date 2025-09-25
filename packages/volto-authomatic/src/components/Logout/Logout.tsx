@@ -49,7 +49,6 @@ const Logout: React.FC = () => {
   const dispatch = useDispatch();
   const OIDCValues = useSelector((state: RootState) => state.oidcRedirect);
   const logoutOIDCValues = useSelector((state: RootState) => state.oidcLogout);
-  const logoutSuccess = useSelector((state: any) => state.userSession.token);
   const next_url = logoutOIDCValues.next_url;
 
   const returnUrl = useMemo(
@@ -87,10 +86,10 @@ const Logout: React.FC = () => {
   }, [dispatch, OIDCValues]);
 
   useEffect(() => {
-    if (displayLogout && logoutSuccess === null) {
+    if (displayLogout && token === null) {
       dispatch(listActions('/'));
     }
-  }, [displayLogout, dispatch, logoutSuccess]);
+  }, [displayLogout, dispatch, token]);
 
   useEffect(() => {
     if (next_url) {
