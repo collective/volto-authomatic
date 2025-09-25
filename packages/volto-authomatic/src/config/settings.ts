@@ -8,5 +8,6 @@ declare module '@plone/types' {
 
 export default function install(config: ConfigType) {
   config.settings.showPloneLogin = false;
+  config.settings.displayLogout = true;
   return config;
 }
