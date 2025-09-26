@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.6 (2025-09-26)
+
+### Bugfix
+
+- import settings config file to index file. @iFlameing 
+
 ## 3.0.0-alpha.5 (2025-09-25)
 
 ### Feature
