@@ -69,6 +69,7 @@ function Login({ intl }) {
         window.location.href = next_url;
       }, 500);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startedOIDC, loginOIDCValues]);
 
   useEffect(() => {
