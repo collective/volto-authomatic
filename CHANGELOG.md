@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.0.4](https://github.com/collective/volto-authomatic/compare/2.0.3...2.0.4) (2025-11-05)
+
 ## [2.0.3](https://github.com/collective/volto-authomatic/compare/2.0.2...2.0.3) (2025-11-05)
 
 ## [2.0.2](https://github.com/collective/volto-authomatic/compare/2.0.1...2.0.2) (2025-11-05)
