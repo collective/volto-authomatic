@@ -57,6 +57,7 @@ function LoginOIDC({ intl }) {
         toast.dismiss('loginFailed');
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token, history]);
 
   useEffect(() => {
