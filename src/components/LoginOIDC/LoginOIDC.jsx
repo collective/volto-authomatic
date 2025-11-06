@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import { Toast } from '@plone/volto/components';
 import { defineMessages, injectIntl } from 'react-intl';
 import { useParams, useLocation, useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { shallowEqual, useSelector, useDispatch } from 'react-redux';
 import { useCookies } from 'react-cookie';
 
 const messages = defineMessages({
@@ -38,16 +38,18 @@ function LoginOIDC({ intl }) {
   const history = useHistory();
   const dispatch = useDispatch();
   const session = useSelector((state) => state.oidcRedirect.session);
-  const userSession = useSelector((state) => state.userSession);
-  const isLoading = userSession.login.loading;
-  const error = userSession.login.error;
-  const token = userSession.token;
+  const isLoading = useSelector((state) => state.userSession.login.loading);
+  const hasLoaded = useSelector((state) => state.userSession.login.loaded || !!state.userSession.login.error);
+  const error = useSelector((state) => state.userSession.login.error, shallowEqual);
+  const token = useSelector((state) => state.userSession.token);
   const [cookies, , removeCookie] = useCookies();
   const return_url = cookies.return_url || '/';
 
   useEffect(() => {
-    dispatch(oidcLogin(provider, query, session));
-  }, [dispatch, provider, query, session]);
+    if (!isLoading && !hasLoaded) {
+      dispatch(oidcLogin(provider, query, session));
+    }
+  }, [dispatch, provider, query, session, isLoading, hasLoaded]);
 
   useEffect(() => {
     if (token) {
