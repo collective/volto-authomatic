@@ -27,6 +27,10 @@
     "@commitlint/config-conventional": "^17.0.2",
     "@plone/scripts": "^3.0.0",
     "@release-it/conventional-changelog": "^5.0.0",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@vitejs/plugin-react": "4.7.0",
+    "@vitest/coverage-v8": "3.2.7",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-react-app": "^7.0.1",
@@ -36,13 +40,16 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "jsdom": "23.0.0",
     "postcss-syntax": "^0.36.2",
     "prettier": "3.0.3",
     "release-it": "^16.1.5",
     "stylelint": "15.10.3",
     "stylelint-config-idiomatic-order": "9.0.0",
     "stylelint-config-prettier": "9.0.4",
-    "stylelint-prettier": "4.0.2"
+    "stylelint-prettier": "4.0.2",
+    "vite": "6.4.3",
+    "vitest": "3.2.7"
   },
   "repository": {
     "type": "git",
@@ -64,7 +71,9 @@
     "release": "release-it",
     "stylelint:fix": "yarn stylelint --fix && yarn stylelint:overrides --fix",
     "stylelint:overrides": "./node_modules/.bin/stylelint --syntax less --allow-empty-input 'theme/**/*.overrides' 'src/**/*.overrides'",
-    "stylelint": "./node_modules/stylelint/bin/stylelint.js --allow-empty-input 'src/**/*.{css,less}'"
+    "stylelint": "./node_modules/stylelint/bin/stylelint.js --allow-empty-input 'src/**/*.{css,less}'",
+    "test": "vitest --config ./vitest.config.mjs run --passWithNoTests",
+    "test:fix": "vitest --config ./vitest.config.mjs run --passWithNoTests --update"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "pnpm@10.20.0"
 }

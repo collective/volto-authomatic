@@ -103,11 +103,11 @@ lint: ## Lint Codebase
 ## Tests
 .PHONY: test
 test: ## Run unit tests
-	${DEV_COMPOSE} run --rm addon-dev test --watchAll
+	pnpm test
 
 .PHONY: test-ci
 test-ci: ## Run unit tests in CI
-	${DEV_COMPOSE} run -e CI=1 addon-dev test
+	CI=1 pnpm test
 
 ## Storybook
 .PHONY: start-storybook
