@@ -1,8 +1,10 @@
-.yarn/cache
-*.log
-build
-cache
-cypress
-Dockerfile
+.git
 node_modules
-omelette
+core
+build
+coverage
+*.log
+.DS_Store
+cypress/screenshots
+cypress/videos
+cypress/reports

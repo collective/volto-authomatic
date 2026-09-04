@@ -17,3 +17,14 @@ results
 !.yarn/sdks
 !.yarn/versions
 .yarn
+.*project
+.settings/
+.vscode
+acceptance/cypress/videos/
+acceptance/node_modules
+.storybook-build
+coverage
+/core
+*.log
+yarn.lock
+/public

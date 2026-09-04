@@ -1,0 +1,7 @@
+{
+  "title": "Authomatic",
+  "frontend_addon_name": "volto-authomatic",
+  "description": "Social Login with OAuth2/OpenId for Volto sites.",
+  "volto_version": "19.3.0",
+  "__template__": "frontend_addon"
+}
