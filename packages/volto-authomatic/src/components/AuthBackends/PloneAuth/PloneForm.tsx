@@ -4,7 +4,7 @@
  */
 import React, { useState, FormEvent } from 'react';
 import { Button, Container, TextField } from '@plone/components';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 
 import Icon from '@plone/volto/components/theme/Icon/Icon';
@@ -31,10 +31,14 @@ const PloneForm: React.FC<PloneFormProps> = ({ onLogin, loading }) => {
     event.preventDefault();
     onLogin(loginValue, passwordValue);
   };
-
+  const history = useHistory();
   const handleCancel = () => {
-    setLoginValue('');
-    setPasswordValue('');
+    if (loginValue || passwordValue) {
+      setLoginValue('');
+      setPasswordValue('');
+    } else {
+      history.push('/');
+    }
   };
 
   return (
