@@ -8,6 +8,21 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0 (2026-09-30)
+
+
+### Bugfix
+
+- Fix cancel button in login form is not working @iRohitSingh 
+
+
+### Internal
+
+- Add Dependabot configuration to keep GitHub Actions up to date. @ericof 
+- Run the changelog check with uvx towncrier, and skip it for Dependabot pull requests. @ericof 
+- Ship the changelog template in the news folder, add the tests fragment type, and fix issue links in the changelog. @ericof 
+- Use uvx instead of pipx to run towncrier during releases. @ericof 
+
 ## 3.0.0-alpha.6 (2025-09-26)
 
 ### Bugfix
