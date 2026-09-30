@@ -1,0 +1,1 @@
+Use uvx instead of pipx to run towncrier during releases. @ericof
