@@ -1,4 +1,4 @@
-name: Changelog check
+name: "Changelog"
 on:
   pull_request:
     types: [assigned, opened, synchronize, reopened, labeled, unlabeled]
@@ -6,53 +6,50 @@ on:
       - main
 
 env:
-  NODE_VERSION: 22
-  ADDON_NAME: volto-authomatic
+  base-branch: main
+  python-version: "3.12"
+  path-frontend: packages/volto-authomatic
+
+permissions:
+  contents: read
+  pull-requests: read
 
 jobs:
-  build:
+  checks:
     runs-on: ubuntu-latest
+    # Dependabot updates need no news fragment. Its pull requests also carry
+    # the "skip changelog" label, but the author check does not depend on it.
+    if: >-
+      ${{
+        !contains(github.event.pull_request.labels.*.name, 'skip changelog')
+        && github.event.pull_request.user.login != 'dependabot[bot]'
+      }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # Fetch all history
           fetch-depth: '0'
 
-      - name: Install pipx
-        run: pip install towncrier
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - name: Setup uv
+        uses: plone/meta/.github/actions/setup_uv@2.x
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          python-version: ${{ env.python-version }}
+          working-directory: '.'
 
-      - name: Enable corepack
-        run: npm i -g corepack@latest && corepack enable
-
-      - name: Get pnpm store directory
-        shell: bash
+      - name: "Fetch base branch"
         run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+          # Reference: https://github.com/actions/checkout/#fetch-all-branches.
+          git fetch --no-tags origin ${{ env.base-branch }}
 
-      - uses: actions/cache@v4
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
+      - name: "Frontend: Check"
+        id: frontend-changelog
         run: |
-          make install
+          uvx towncrier check --compare-with origin/${{ env.base-branch }} --config ${{ env.path-frontend }}/towncrier.toml --dir ${{ env.path-frontend }}
 
-      - name: Check for presence of a Change Log fragment (only pull requests)
+      - name: "Report check"
+        if: ${{ always() }}
         run: |
-          # Fetch the pull request' base branch so towncrier will be able to
-          # compare the current branch with the base branch.
-          # Source: https://github.com/actions/checkout/#fetch-all-branches.
-          git fetch --no-tags origin ${BASE_BRANCH}
-          towncrier check --dir packages/${ADDON_NAME}
-        env:
-          BASE_BRANCH: ${{ github.base_ref }}
-        if: github.event_name == 'pull_request'
+          echo '# Workflow Report' >> $GITHUB_STEP_SUMMARY
+          echo '| Job ID | Conclusion |' >> $GITHUB_STEP_SUMMARY
+          echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+          echo '| frontend |${{ steps.frontend-changelog.conclusion }} |' >> $GITHUB_STEP_SUMMARY

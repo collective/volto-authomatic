@@ -1,0 +1,1 @@
+Run the changelog check with uvx towncrier, and skip it for Dependabot pull requests. @ericof
