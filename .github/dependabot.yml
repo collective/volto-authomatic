@@ -1,0 +1,16 @@
+version: 2
+updates:
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # Check for updates to GitHub Actions every week
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+    # Custom labels replace Dependabot's defaults, so the defaults are listed
+    # too. "skip changelog" exempts these pull requests from the news check.
+    labels:
+      - "dependencies"
+      - "github_actions"
+      - "skip changelog"
