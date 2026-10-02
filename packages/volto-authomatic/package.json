@@ -32,16 +32,18 @@
   "addons": [],
   "dependencies": {},
   "peerDependencies": {
-    "@plone/components": "workspace:*",
-    "@plone/registry": "workspace:*",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "@plone/components": "^3.0.0 || ^4.0.0",
+    "@plone/registry": "^2.5.0 || ^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-intl": "*",
     "semantic-ui-react": "*"
   },
   "devDependencies": {
-    "@plone/types": "workspace:*",
+    "@plone/components": "workspace:*",
+    "@plone/registry": "workspace:*",
     "@plone/scripts": "^3.6.1",
+    "@plone/types": "workspace:*",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "release-it": "^17.1.1"
