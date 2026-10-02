@@ -8,6 +8,18 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.1 (2026-10-02)
+
+
+### Bugfix
+
+- Declared `@plone/components` and `@plone/registry` peers as major-version ranges (Volto 18 and 19) instead of `workspace:*`, which published as exact pins of the development Volto core, and relaxed the `react`/`react-dom` peers to `^18.2.0`. @sneridagh 
+
+
+### Internal
+
+- Upgraded the development environment and CI to Volto 19.4.1: pnpm 10 with the Volto core catalog, Vitest instead of Jest for unit tests, `@plone/razzle` in Babel and Storybook, and Node.js 24 in CI. @sneridagh 
+
 ## 3.0.0 (2026-09-30)
 
 

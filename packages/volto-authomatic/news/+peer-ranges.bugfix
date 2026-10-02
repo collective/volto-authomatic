@@ -1,1 +1,0 @@
-Declared `@plone/components` and `@plone/registry` peers as major-version ranges (Volto 18 and 19) instead of `workspace:*`, which published as exact pins of the development Volto core, and relaxed the `react`/`react-dom` peers to `^18.2.0`. @sneridagh
