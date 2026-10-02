@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-05-06T14:53:41.527Z\n"
+"POT-Creation-Date: 2026-10-02T11:36:30.654Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -53,6 +53,11 @@ msgstr ""
 msgid "Log in with"
 msgstr ""
 
+#. Default: "Logged out"
+#: components/Logout/Logout
+msgid "Logged out"
+msgstr ""
+
 #. Default: "Login"
 #: messages
 msgid "Login"
@@ -96,6 +101,11 @@ msgstr ""
 #. Default: "You have been logged out"
 #: messages
 msgid "You have been logged out"
+msgstr ""
+
+#. Default: "You have been logged out from the site."
+#: components/Logout/Logout
+msgid "You have been logged out from the site."
 msgstr ""
 
 #. Default: "Forgot your password?"

@@ -5,12 +5,12 @@ msgstr ""
 "POT-Creation-Date: 2023-05-09 11:45-0400\n"
 "PO-Revision-Date: 2025-07-21 18:58+0200\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
-"Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
-"MIME-Version: 1.0\n"
+"Language-Team: ES <LL@li.org>\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
 "Preferred-Encodings: utf-8\n"
 "Language-Code: es\n"
 "Language-Name: Español\n"
@@ -58,6 +58,11 @@ msgstr "Iniciar sesión"
 msgid "Log in with"
 msgstr "Inicio de sesión con"
 
+#. Default: "Logged out"
+#: components/Logout/Logout
+msgid "Logged out"
+msgstr ""
+
 #. Default: "Login"
 #: messages
 msgid "Login"
@@ -102,6 +107,11 @@ msgstr "Regístrate con"
 #: messages
 msgid "You have been logged out"
 msgstr "Has sido desconectado"
+
+#. Default: "You have been logged out from the site."
+#: components/Logout/Logout
+msgid "You have been logged out from the site."
+msgstr ""
 
 #. Default: "Forgot your password?"
 #: messages

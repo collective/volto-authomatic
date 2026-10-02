@@ -56,6 +56,11 @@ msgstr "Autenticar"
 msgid "Log in with"
 msgstr "Entrar com"
 
+#. Default: "Logged out"
+#: components/Logout/Logout
+msgid "Logged out"
+msgstr ""
+
 #. Default: "Login"
 #: messages
 msgid "Login"
@@ -100,6 +105,11 @@ msgstr "Cadastrar usando"
 #: messages
 msgid "You have been logged out"
 msgstr "Você não está mais autenticado"
+
+#. Default: "You have been logged out from the site."
+#: components/Logout/Logout
+msgid "You have been logged out from the site."
+msgstr ""
 
 #. Default: "Forgot your password?"
 #: messages

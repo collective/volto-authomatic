@@ -51,6 +51,11 @@ msgstr ""
 msgid "Log in with"
 msgstr ""
 
+#. Default: "Logged out"
+#: components/Logout/Logout
+msgid "Logged out"
+msgstr ""
+
 #. Default: "Login"
 #: messages
 msgid "Login"
@@ -94,6 +99,11 @@ msgstr ""
 #. Default: "You have been logged out"
 #: messages
 msgid "You have been logged out"
+msgstr ""
+
+#. Default: "You have been logged out from the site."
+#: components/Logout/Logout
+msgid "You have been logged out from the site."
 msgstr ""
 
 #. Default: "Forgot your password?"
