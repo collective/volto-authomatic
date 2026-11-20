@@ -1,1 +1,0 @@
-Fixed Allow on the loopback consent page, which sent the user back to the site root instead of handing the token to the local application. The consent page also has proper padding now. @ericof

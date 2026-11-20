@@ -8,6 +8,18 @@
 
 <!-- towncrier release notes start -->
 
+## 3.1.1 (2026-11-20)
+
+
+### Bugfix
+
+- Fixed Allow on the loopback consent page, which sent the user back to the site root instead of handing the token to the local application. The consent page also has proper padding now. @ericof [#52](https://github.com/collective/volto-authomatic/issues/52)
+
+
+### Internal
+
+- Upgraded the development environment to Volto 19.8.1, and pinned webpack to the Volto catalog so Storybook builds with the same webpack as Volto. @ericof 
+
 ## 3.1.0 (2026-11-20)
 
 
