@@ -1,1 +1,0 @@
-Added support for a loopback `return_url`, so command line tools can receive a Plone token after login, with explicit user consent. Only `http://127.0.0.1`, `http://[::1]` and `http://localhost` with a port are accepted; other absolute URLs now fall back to `/`. @ericof

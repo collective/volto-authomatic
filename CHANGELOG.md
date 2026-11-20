@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 3.1.0 (2026-11-20)
+
+
+### Feature
+
+- Added support for a loopback `return_url`, so command line tools can receive a Plone token after login, with explicit user consent. Only `http://127.0.0.1`, `http://[::1]` and `http://localhost` with a port are accepted; other absolute URLs now fall back to `/`. @ericof [#50](https://github.com/collective/volto-authomatic/issues/50)
+
 ## 3.0.1 (2026-10-02)
 
 
