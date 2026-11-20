@@ -1,0 +1,1 @@
+Upgraded the development environment to Volto 19.8.1, and pinned webpack to the Volto catalog so Storybook builds with the same webpack as Volto. @ericof
