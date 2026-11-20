@@ -13,6 +13,11 @@ import { useParams, useLocation, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useCookies } from 'react-cookie';
 import LoginForm from '@plone-collective/volto-authomatic/components/LoginForm/LoginForm';
+import {
+  CONSENT_PATH,
+  isLoopbackHandoff,
+  safeReturnUrl,
+} from '@plone-collective/volto-authomatic/helpers/returnUrl';
 
 interface RootState {
   authomaticRedirect: {
@@ -44,8 +49,10 @@ const Authomatic: React.FC = () => {
   const isLoading = userSession.login.loading;
   const error = userSession.login.error;
   const token = userSession.token;
-  const [cookies, , removeCookie] = useCookies(['return_url']);
+  const [cookies, , removeCookie] = useCookies(['return_url', 'login_state']);
   const return_url = cookies.return_url || '/';
+  const login_state = cookies.login_state;
+  const consent = isLoopbackHandoff(return_url, login_state);
 
   useEffect(() => {
     dispatch(authomaticLogin(provider, query, session));
@@ -53,13 +60,20 @@ const Authomatic: React.FC = () => {
 
   useEffect(() => {
     if (token) {
-      history.push(return_url);
-      window.setTimeout(() => removeCookie('return_url', { path: '/' }), 500);
       if (toast.isActive('loginFailed')) {
         toast.dismiss('loginFailed');
       }
+      if (consent) {
+        history.push(CONSENT_PATH);
+        return;
+      }
+      history.push(safeReturnUrl(return_url, { allowLoopback: false }));
+      window.setTimeout(() => {
+        removeCookie('return_url', { path: '/' });
+        removeCookie('login_state', { path: '/' });
+      }, 500);
     }
-  }, [token, history, removeCookie, return_url]);
+  }, [token, history, removeCookie, return_url, consent]);
 
   useEffect(() => {
     if (error) {

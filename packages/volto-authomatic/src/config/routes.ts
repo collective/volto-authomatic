@@ -3,6 +3,7 @@ import Login from '@plone-collective/volto-authomatic/components/Login/Login';
 import Authomatic from '@plone-collective/volto-authomatic/components/AuthBackends/Authomatic/Authomatic';
 import OIDC from '@plone-collective/volto-authomatic/components/AuthBackends/OIDC/OIDC';
 import Logout from '@plone-collective/volto-authomatic/components/Logout/Logout';
+import Consent from '@plone-collective/volto-authomatic/components/Consent/Consent';
 import VoltoLogin from '@plone/volto/components/theme/Login/Login';
 
 export default function install(config: ConfigType) {
@@ -10,6 +11,7 @@ export default function install(config: ConfigType) {
     ...config.settings.nonContentRoutes,
     /^\/login-authomatic\/.*$/,
     /^\/login-oidc\/.*$/,
+    /^\/login-consent$/,
   ];
   config.addonRoutes.push(
     { path: '/fallback_login', exact: false, component: VoltoLogin },
@@ -30,6 +32,7 @@ export default function install(config: ConfigType) {
       component: Authomatic,
     },
     { path: '/login-oidc/:provider', exact: false, component: OIDC },
+    { path: '/login-consent', exact: true, component: Consent },
   );
   return config;
 }

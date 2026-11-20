@@ -1,0 +1,35 @@
+.consent-page {
+  .consent-question {
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .consent-actions {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid #edf1f2;
+    gap: 12px;
+
+    form {
+      margin: 0;
+    }
+
+    button {
+      padding: 8px 16px;
+      border: 1px solid #c7d5d8;
+      border-radius: 4px;
+      background-color: transparent;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .consent-allow {
+      border-color: #3b6e8f;
+      background-color: #3b6e8f;
+      color: #fff;
+    }
+  }
+}

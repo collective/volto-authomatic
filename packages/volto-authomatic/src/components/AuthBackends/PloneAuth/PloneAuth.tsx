@@ -17,7 +17,13 @@ import {
 import { purgeMessages } from '@plone/volto/actions/messages/messages';
 import { toast } from 'react-toastify';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
+import { useCookies } from 'react-cookie';
 import messages from '@plone-collective/volto-authomatic/messages';
+import {
+  CONSENT_PATH,
+  isLoopbackHandoff,
+  safeReturnUrl,
+} from '@plone-collective/volto-authomatic/helpers/returnUrl';
 import PloneForm from './PloneForm';
 
 interface LocationState {
@@ -45,10 +51,11 @@ const PloneAuth: React.FC<LoginProps> = (props) => {
   const error = useSelector((state: any) => state.userSession.login.error);
   const loading = useSelector((state: any) => state.userSession.login.loading);
 
+  const [, setCookie] = useCookies(['return_url', 'login_state']);
+  const query = qs.parse(props.location?.search ?? location.search);
   const returnUrl =
-    qs.parse(props.location?.search ?? location.search).return_url ||
-    location.pathname.replace(/\/[^/]*\/?$/, '') ||
-    '/';
+    query.return_url || location.pathname.replace(/\/[^/]*\/?$/, '') || '/';
+  const loginState = typeof query.state === 'string' ? query.state : null;
 
   const previousToken = usePrevious(token);
 
@@ -58,7 +65,13 @@ const PloneAuth: React.FC<LoginProps> = (props) => {
       dispatch(purgeMessages());
       history.push(`${location.pathname}${location.search}`);
     } else if (token && token !== previousToken) {
-      history.push(returnUrl || '/');
+      if (isLoopbackHandoff(returnUrl, loginState)) {
+        setCookie('return_url', safeReturnUrl(returnUrl), { path: '/' });
+        setCookie('login_state', loginState, { path: '/' });
+        history.push(CONSENT_PATH);
+      } else {
+        history.push(safeReturnUrl(returnUrl, { allowLoopback: false }));
+      }
       if (toast.isActive('loggedOut')) toast.dismiss('loggedOut');
       if (toast.isActive('loginFailed')) toast.dismiss('loginFailed');
     }
@@ -90,6 +103,8 @@ const PloneAuth: React.FC<LoginProps> = (props) => {
     intl,
     history,
     returnUrl,
+    loginState,
+    setCookie,
     location.search,
     location.pathname,
     location?.state?.isLogout,
