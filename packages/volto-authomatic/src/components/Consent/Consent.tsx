@@ -2,7 +2,7 @@
  * Consent route container.
  * @module components/Consent/Consent
  */
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
@@ -31,6 +31,12 @@ interface RootState {
   };
 }
 
+interface Handoff {
+  returnUrl: string;
+  state: string;
+  token: string;
+}
+
 /**
  * Read the ``sub`` claim of a token, without verifying it.
  * The token is only used to ask the server for the user's name.
@@ -54,6 +60,10 @@ function tokenSubject(token: string | null): string | null {
 /**
  * Consent route. Shows the consent page after a loopback login, and
  * returns to the site when there is no pending loopback handoff.
+ *
+ * The handoff is kept from the first render where it is ready. Allow
+ * clears the handoff cookies while the browser submits the form, so the
+ * page must keep rendering the form and must not redirect afterwards.
  * @function Consent
  * @returns The consent page, or nothing while redirecting.
  */
@@ -71,10 +81,23 @@ const Consent: React.FC = () => {
   const ready = Boolean(token) && isLoopbackHandoff(returnUrl, state);
   const subject = tokenSubject(token);
 
+  // The handoff as it was when first ready. Clearing the cookies on Allow
+  // must not change what the form posts, nor unmount it mid-submit.
+  const handoff = useRef<Handoff | null>(null);
+  if (ready && token && !handoff.current) {
+    handoff.current = { returnUrl, state, token };
+  }
+  const allowed = useRef(false);
+
   const clearCookies = useCallback(() => {
     removeCookie('return_url', { path: '/' });
     removeCookie('login_state', { path: '/' });
   }, [removeCookie]);
+
+  const onAllow = useCallback(() => {
+    allowed.current = true;
+    clearCookies();
+  }, [clearCookies]);
 
   useEffect(() => {
     dispatch(getSite());
@@ -87,13 +110,15 @@ const Consent: React.FC = () => {
   }, [dispatch, subject]);
 
   useEffect(() => {
-    if (!ready) {
+    // After Allow the browser is posting the form to the loopback URL;
+    // navigating here would cancel it.
+    if (!ready && !allowed.current) {
       clearCookies();
       history.replace('/');
     }
   }, [ready, history, clearCookies]);
 
-  if (!ready || !token) {
+  if (!handoff.current) {
     return null;
   }
 
@@ -104,10 +129,10 @@ const Consent: React.FC = () => {
     <ConsentPage
       userName={userName}
       siteTitle={site}
-      returnUrl={returnUrl}
-      state={state}
-      token={token}
-      onAllow={clearCookies}
+      returnUrl={handoff.current.returnUrl}
+      state={handoff.current.state}
+      token={handoff.current.token}
+      onAllow={onAllow}
       onDeny={() => {
         clearCookies();
         history.push('/');
