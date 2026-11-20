@@ -10,8 +10,13 @@ import { useIntl } from 'react-intl';
 import messages from '@plone-collective/volto-authomatic/messages';
 import { useParams, useLocation, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useCookies } from 'react-cookie';
 import Loading from '@plone-collective/volto-authomatic/components/Loading/Loading';
 import LoginForm from '@plone-collective/volto-authomatic/components/LoginForm/LoginForm';
+import {
+  CONSENT_PATH,
+  isLoopbackHandoff,
+} from '@plone-collective/volto-authomatic/helpers/returnUrl';
 
 interface RootState {
   oidcRedirect: {
@@ -41,6 +46,8 @@ const OIDC: React.FC = () => {
   const isLoading = userSession.login.loading;
   const error = userSession.login.error;
   const token = userSession.token;
+  const [cookies, , removeCookie] = useCookies(['return_url', 'login_state']);
+  const consent = isLoopbackHandoff(cookies.return_url, cookies.login_state);
 
   useEffect(() => {
     dispatch(oidcLogin(provider, query, session));
@@ -48,12 +55,20 @@ const OIDC: React.FC = () => {
 
   useEffect(() => {
     if (token) {
-      history.push('/');
       if (toast.isActive('loginFailed')) {
         toast.dismiss('loginFailed');
       }
+      if (consent) {
+        history.push(CONSENT_PATH);
+        return;
+      }
+      // OIDC has always returned to the site root; a relative
+      // return_url is not followed here.
+      removeCookie('return_url', { path: '/' });
+      removeCookie('login_state', { path: '/' });
+      history.push('/');
     }
-  }, [token, history]);
+  }, [token, history, removeCookie, consent]);
 
   useEffect(() => {
     if (error) {

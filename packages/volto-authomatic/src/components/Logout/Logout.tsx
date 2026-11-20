@@ -14,6 +14,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { logout } from '@plone/volto/actions/userSession/userSession';
 import { purgeMessages } from '@plone/volto/actions/messages/messages';
 import { oidcLogout } from '@plone-collective/volto-authomatic/actions/auth/oidc';
+import { safeReturnUrl } from '@plone-collective/volto-authomatic/helpers/returnUrl';
 import { listActions } from '@plone/volto/actions/actions/actions';
 import config from '@plone/volto/registry';
 
@@ -51,15 +52,18 @@ const Logout: React.FC = () => {
   const logoutOIDCValues = useSelector((state: RootState) => state.oidcLogout);
   const next_url = logoutOIDCValues.next_url;
 
-  const returnUrl = useMemo(
-    () =>
-      qs.parse(location.search).return_url ||
+  const returnUrl = useMemo(() => {
+    const requested = qs.parse(location.search).return_url;
+    if (requested) {
+      // Logout only follows relative paths.
+      return safeReturnUrl(requested, { allowLoopback: false });
+    }
+    return (
       location.pathname
         .replace(/\/login\/?$/, '')
-        .replace(/\/logout\/?$/, '') ||
-      '/',
-    [location.pathname, location.search],
-  );
+        .replace(/\/logout\/?$/, '') || '/'
+    );
+  }, [location.pathname, location.search]);
   useEffect(() => {
     if (!token && !displayLogout && !next_url) {
       history.replace(returnUrl || '/');

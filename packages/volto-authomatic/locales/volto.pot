@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-10-02T11:36:30.654Z\n"
+"POT-Creation-Date: 2026-11-20T14:25:53.662Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -13,6 +13,21 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
+#. Default: "Allow"
+#: messages
+msgid "Allow"
+msgstr ""
+
+#. Default: "Allow an application on this computer to act as {user} on {site}?"
+#: messages
+msgid "Allow an application on this computer to act as {user} on {site}?"
+msgstr ""
+
+#. Default: "Allow application access"
+#: messages
+msgid "Allow application access"
+msgstr ""
+
 #. Default: "Authenticating"
 #: messages
 msgid "Authenticating"
@@ -23,6 +38,11 @@ msgstr ""
 msgid "Authentication failed."
 msgstr ""
 
+#. Default: "Back to the site"
+#: messages
+msgid "Back to the site"
+msgstr ""
+
 #. Default: "Both email address and password are case sensitive, check that caps lock is not enabled."
 #: messages
 msgid "Both email address and password are case sensitive, check that caps lock is not enabled."
@@ -31,6 +51,11 @@ msgstr ""
 #. Default: "Cancel"
 #: messages
 msgid "Cancel"
+msgstr ""
+
+#. Default: "Deny"
+#: messages
+msgid "Deny"
 msgstr ""
 
 #. Default: "Error"
@@ -73,6 +98,11 @@ msgstr ""
 msgid "Login Name"
 msgstr ""
 
+#. Default: "Only allow applications that you started yourself."
+#: messages
+msgid "Only allow applications that you started yourself."
+msgstr ""
+
 #. Default: "Password"
 #: messages
 msgid "Password"
@@ -96,6 +126,11 @@ msgstr ""
 #. Default: "Sign up with"
 #: messages
 msgid "Sign up with"
+msgstr ""
+
+#. Default: "This login cannot be shared with an application on this computer."
+#: messages
+msgid "This login cannot be shared with an application on this computer."
 msgstr ""
 
 #. Default: "You have been logged out"

@@ -78,6 +78,36 @@ const messages = defineMessages({
     id: 'Sign up with',
     defaultMessage: 'Sign up with',
   },
+  consentTitle: {
+    id: 'Allow application access',
+    defaultMessage: 'Allow application access',
+  },
+  consentDescription: {
+    id: 'Only allow applications that you started yourself.',
+    defaultMessage: 'Only allow applications that you started yourself.',
+  },
+  consentQuestion: {
+    id: 'Allow an application on this computer to act as {user} on {site}?',
+    defaultMessage:
+      'Allow an application on this computer to act as {user} on {site}?',
+  },
+  consentAllow: {
+    id: 'Allow',
+    defaultMessage: 'Allow',
+  },
+  consentDeny: {
+    id: 'Deny',
+    defaultMessage: 'Deny',
+  },
+  consentInvalid: {
+    id: 'This login cannot be shared with an application on this computer.',
+    defaultMessage:
+      'This login cannot be shared with an application on this computer.',
+  },
+  consentBack: {
+    id: 'Back to the site',
+    defaultMessage: 'Back to the site',
+  },
 });
 
 export default messages;
