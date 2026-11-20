@@ -2,6 +2,21 @@ import { defineConfig } from 'vitest/config';
 import voltoVitestConfig from '@plone/volto/vitest.config.mjs';
 import path from 'path';
 
+const voltoModules = path.resolve(
+  __dirname,
+  '../../core/packages/volto/node_modules',
+);
+
+// Libraries the add-on uses through Volto, which provides them at runtime.
+// They are not dependencies of the add-on package, so tests resolve them
+// from Volto's own node_modules.
+const voltoProvided = Object.fromEntries(
+  ['react-cookie', 'react-redux', 'react-router-dom'].map((name) => [
+    name,
+    path.join(voltoModules, name),
+  ]),
+);
+
 export default defineConfig({
   ...voltoVitestConfig,
   resolve: {
@@ -21,6 +36,7 @@ export default defineConfig({
         ...project.resolve,
         alias: {
           ...project.resolve?.alias,
+          ...voltoProvided,
           '@plone-collective/volto-authomatic': path.resolve(__dirname, 'src'),
         },
       },
